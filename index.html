@@ -6,7 +6,9 @@
     <title>Sikker Klikker</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Navigations-bar -->
     <header>
         <nav aria-label="Hovednavigation" class="nav">
             <!-- Logo til venstre -->
@@ -28,9 +30,9 @@
               <li><a href="#">Om SikkerKlikker</a></li>
             </ul>
         </nav>
-      </header>
+    </header>
     
-      <main>
+    <main>
         <!-- hero/intro med overskrift og brødtekst -->
         <section class="hero">
             <h1>Sikker før du klikker?</h1>
@@ -42,13 +44,55 @@
               Vælg et emne nedenfor – læs først, test dig selv bagefter, eller spring direkte ud i det.
             </p>
           </section>
-        <!-- de tre emner -->
-         
-      </main>
+
+        <!-- de tre emne-bokse -->
+        <section class="topics">
+            <div class="card-wrapper">
+              <h3 class="card-title email">E-mail</h3>
+              <div class="card email">
+                <p class="card-text">
+                  De fleste digitale angreb starter i indbakken. Lær at genkende svindel-mails, før du klikker.
+                </p>
+                <div class="card-buttons">
+                  <button class="btn light">Test din viden</button>
+                  <button class="btn dark">Læs guiden</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card-wrapper">
+              <h3 class="card-title ecommerce">E-handel</h3>
+              <div class="card ecommerce">
+                <p class="card-text">
+                  Et godt tilbud kan hurtigt blive dyrt. Bliv skarp på, hvordan du handler sikkert online.
+                </p>
+                <div class="card-buttons">
+                  <button class="btn light">Test din viden</button>
+                  <button class="btn dark">Læs guiden</button>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card-wrapper">
+              <h3 class="card-title social">SoMe</h3>
+              <div class="card social">
+                <p class="card-text">
+                  Ikke alt er, hvad det udgiver sig for at være. Lær at spotte falske profiler og farlige henvendelser.
+                </p>
+                <div class="card-buttons">
+                  <button class="btn light">Test din viden</button>
+                  <button class="btn dark">Læs guiden</button>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+    </main>
     
       <footer>
         <!-- evt. kort footer, copyright eller kontakt -->
       </footer>
+
       <script src="script.js"></script>
 
 </body>

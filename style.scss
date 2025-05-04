@@ -66,7 +66,9 @@ header {
     display: none;
   }
 
-  /* Main */
+/* === MAIN === */
+
+  /* Overskrift og intro */
   .hero {
     max-width: 48rem;
     margin: 4rem auto 2rem auto;
@@ -87,5 +89,80 @@ header {
       margin-bottom: 1rem;
     }
   }
+
+  /*De tre emne-bokse*/
+  .topics {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  
+    .card-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 20rem;
+  
+      .card-title {
+        font-size: 1.5rem;
+        margin-bottom: -1.2rem;
+        background-color: #f7f7f7;
+        padding: 0 0.5rem;
+        z-index: 2;
+      }
+  
+      .card {
+        padding: 2rem 1rem 1.5rem;
+        border-radius: 0.625rem;
+        text-align: center;
+        color: #fff;
+  
+        &.email {
+          background-color: #4e0229;
+        }
+  
+        &.ecommerce {
+          background-color: #011d59;
+        }
+  
+        &.social {
+          background-color: #014e52;
+        }
+  
+        .card-text {
+          margin-bottom: 1rem;
+          font-size: 1rem;
+        }
+  
+        .card-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+  
+          .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            font-weight: bold;
+  
+            &.light {
+              background-color: #dcdcdc;
+              color: #000;
+            }
+  
+            &.dark {
+              background-color: #fff;
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
   
   
