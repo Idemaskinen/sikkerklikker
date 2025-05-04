@@ -1,0 +1,59 @@
+/* === HEADER OG NAVIGATION === */
+
+header {
+    background-color: #4E0229;
+    padding: 1rem;
+  }
+  
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  /* Menu-knap */
+  .nav-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .nav-toggle .close-icon {
+    display: none;
+  }
+  
+  /* Dropdown-menu */
+  .nav-menu {
+    background-color: #ffffff;
+    border-radius: 0 0 12px 12px;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    padding: 1rem;
+    width: 220px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-menu a {
+    color: #4E0229;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* Skjul menu ved start */
+  .nav-menu[hidden] {
+    display: none;
+  }
+  
