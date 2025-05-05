@@ -68,8 +68,8 @@ nav {
 /* === MAIN === */
 /* Overskrift og intro */
 .hero {
-  max-width: 48rem;
-  margin: 4rem auto 2rem auto;
+  max-width: 50rem;
+  margin: 3rem auto 2rem auto;
   padding: 0 1rem;
   text-align: left;
 }
@@ -87,63 +87,70 @@ nav {
 }
 
 /*De tre emne-bokse*/
-.topics {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin: 2rem 0;
+.emne-sektion {
+  padding-block: 2rem;
 }
-.topics .card-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  max-width: 20rem;
-}
-.topics .card-wrapper .card-title {
-  font-size: 1.5rem;
-  margin-bottom: -1.2rem;
-  background-color: #fff;
-  padding: 0 0.5rem;
-  z-index: 2;
-}
-.topics .card-wrapper .card {
-  padding: 2rem 1rem 1.5rem;
-  border-radius: 0.625rem;
-  text-align: center;
-  color: #fff;
-}
-.topics .card-wrapper .card.email {
-  background-color: #4e0229;
-}
-.topics .card-wrapper .card.ecommerce {
-  background-color: #011d59;
-}
-.topics .card-wrapper .card.social {
-  background-color: #014e52;
-}
-.topics .card-wrapper .card .card-text {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-.topics .card-wrapper .card .card-buttons {
+
+.emneboks-wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
-.topics .card-wrapper .card .card-buttons .btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-weight: bold;
+
+.emneboks-container {
+  position: relative;
+  width: 16rem;
 }
-.topics .card-wrapper .card .card-buttons .btn.light {
-  background-color: #dcdcdc;
-  color: #000;
+
+.emneoverskrift {
+  position: absolute;
+  top: -2.7rem;
+  left: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: normal;
+  margin: 0;
 }
-.topics .card-wrapper .card .card-buttons .btn.dark {
+
+.emneboks {
+  height: 16rem;
+  border-radius: 0.625rem;
+  border: 1px solid currentColor;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
-  color: #000;
+}
+.emneboks .emne-topfelt {
+  height: 40%;
+  background-color: currentColor;
+  width: 100%;
+}
+
+.emne-email {
+  color: #4E0229;
+}
+
+.emne-ehandel {
+  color: #011D59;
+}
+
+.emne-some {
+  color: #014E52;
+}
+
+@media (max-width: 768px) {
+  .emneboks-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .emneboks-container {
+    width: 90%;
+  }
+  .emneoverskrift {
+    position: static;
+    margin-bottom: 0.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */

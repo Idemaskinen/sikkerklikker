@@ -70,8 +70,8 @@ header {
 
   /* Overskrift og intro */
   .hero {
-    max-width: 48rem;
-    margin: 4rem auto 2rem auto;
+    max-width: 50rem;
+    margin: 3rem auto 2rem auto;
     padding: 0 1rem;
     text-align: left;
   
@@ -91,77 +91,72 @@ header {
   }
 
   /*De tre emne-bokse*/
-  .topics {
+  .emne-sektion {
+    padding-block: 2rem;
+  }
+  
+  .emneboks-wrapper {
+    max-width: 50rem;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-between;
+    gap: 1rem;
     flex-wrap: wrap;
-    margin: 2rem 0;
+  }
   
-    .card-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: left;
-      max-width: 20rem;
+  .emneboks-container {
+    position: relative;
+    width: 16rem;
+  }
   
-      .card-title {
-        font-size: 1.5rem;
-        margin-bottom: -1.2rem;
-        background-color: #fff;
-        padding: 0 0.5rem;
-        z-index: 2;
-      }
+  .emneoverskrift {
+    position: absolute;
+    top: -2.7rem;
+    left: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: normal;
+    margin: 0;
+  }
   
-      .card {
-        padding: 2rem 1rem 1.5rem;
-        border-radius: 0.625rem;
-        text-align: center;
-        color: #fff;
+  .emneboks {
+    height: 16rem;
+    border-radius: 0.625rem;
+    border: 1px solid currentColor;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
   
-        &.email {
-          background-color: #4e0229;
-        }
-  
-        &.ecommerce {
-          background-color: #011d59;
-        }
-  
-        &.social {
-          background-color: #014e52;
-        }
-  
-        .card-text {
-          margin-bottom: 1rem;
-          font-size: 1rem;
-        }
-  
-        .card-buttons {
-          display: flex;
-          justify-content: space-between ;
-          gap: 1rem;
-  
-          .btn {
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 0.4rem;
-            cursor: pointer;
-            font-weight: bold;
-  
-            &.light {
-              background-color: #dcdcdc;
-              color: #000;
-            }
-  
-            &.dark {
-              background-color: #fff;
-              color: #000;
-            }
-          }
-        }
-      }
+    .emne-topfelt {
+      height: 40%;
+      background-color: currentColor;
+      width: 100%;
     }
   }
+  
+  // Farver (ændrer currentColor)
+  .emne-email { color: #4E0229; }
+  .emne-ehandel { color: #011D59; }
+  .emne-some { color: #014E52; }
+  
+  @media (max-width: 768px) {
+    .emneboks-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .emneboks-container {
+      width: 90%;
+    }
+  
+    .emneoverskrift {
+      position: static;
+      margin-bottom: 0.5rem;
+    }
+  }
+   
+  
+  
   
   
   
