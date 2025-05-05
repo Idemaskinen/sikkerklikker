@@ -196,8 +196,19 @@ header {
   .emne-email { color: #4E0229; }
   .emne-ehandel { color: #011D59; }
   .emne-some { color: #014E52; }
-  
+
+
+  /*--mobil og tablet--*/
   @media (max-width: 768px) {
+
+    .hero {
+      max-width: 90%;
+    }
+
+    .emne-sektion {
+      padding-block: 0 1rem;
+    }
+
     .emneboks-wrapper {
       flex-direction: column;
       align-items: center;
@@ -205,12 +216,15 @@ header {
   
     .emneboks-container {
       width: 90%;
+      max-width: 400px;
     }
   
     .emneoverskrift {
       position: static;
-      margin-bottom: 0.5rem;
+      margin-left: 0.5rem;
     }
+
+    
   }
    
   
