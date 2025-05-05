@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
@@ -14,7 +20,7 @@ header {
   }
   
   nav {
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -71,8 +77,8 @@ header {
   /* Overskrift og intro */
   .hero {
     max-width: 50rem;
-    margin: 3rem auto 2rem auto;
-    padding: 0 1rem;
+    margin: 2rem auto 2rem auto;
+    padding: 0 0.5rem;
     text-align: left;
   
     h1 {
@@ -83,7 +89,7 @@ header {
     }
   
     p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.6;
       color: #4E0229;
       margin-bottom: 1rem;
