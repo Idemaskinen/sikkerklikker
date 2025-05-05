@@ -9,7 +9,26 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: #222;
+    background-color: #f6f6f6;
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
   }
+
+/* === BAGGRUND === */
+.vandmaerke-wrapper {
+  position: absolute;
+  inset: 5rem 2rem auto 2rem;
+  max-height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.vandmaerke {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* === HEADER OG NAVIGATION === */
 
@@ -142,9 +161,9 @@ header {
     .emne-topfelt img {
       height: 107%; 
       display: block;
-      margin-inline: auto; // centrerer
-      transform: translateX(15%); // skubber lidt mod højre
-      margin-bottom: -0.5rem; // hænger lidt ned i hvid boks
+      margin-inline: auto;
+      transform: translateX(15%);
+      margin-bottom: -0.5rem;
     }
     
   }
@@ -205,8 +224,16 @@ header {
   .emne-ehandel { color: #011D59; }
   .emne-some { color: #014E52; }
 
+  /* === FOOTER === */
+  .sidefooter {
+    text-align: center;
+    font-weight: bold;
+    color: #5a002d;
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
 
-  /*--mobil og tablet--*/
+  /* === HOEJFORMAT === */
   @media (max-width: 768px) {
 
     .hero {
