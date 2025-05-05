@@ -112,31 +112,83 @@ header {
   
   .emneboks-container {
     position: relative;
-    width: 16rem;
+    width: 15.5rem;
   }
   
   .emneoverskrift {
     position: absolute;
-    top: -2.7rem;
+    top: -2.8rem;
     left: 0.5rem;
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     font-weight: normal;
     margin: 0;
   }
   
   .emneboks {
-    height: 16rem;
+    height: 14.5rem;
     border-radius: 0.625rem;
     border: 1px solid currentColor;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: #fff;
   
     .emne-topfelt {
       height: 40%;
       background-color: currentColor;
       width: 100%;
+    }
+  }
+
+  .emne-tekst {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+    flex-grow: 1;
+  }
+
+  .emne-knapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+
+    .knap {
+      flex: 1;
+      padding: 0.5rem 0;
+      font-weight: bold;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .primær-knap {
+      border-radius: 0 10px 10px 0;
+    }
+
+    .sekundær-knap {
+      border-radius: 10px 0 0 10px;
+      color: #000;
+    }
+
+    // E-mail farver
+    .emne-email & {
+      .primær-knap { background-color: #4a002d; }
+      .sekundær-knap { background-color: #d9b6c6; }
+    }
+
+    // E-handel farver
+    .emne-ehandel & {
+      .primær-knap { background-color: #001a57; }
+      .sekundær-knap { background-color: #c2cce4; }
+    }
+
+    // SoMe farver
+    .emne-some & {
+      .primær-knap { background-color: #004344; }
+      .sekundær-knap { background-color: #b0d4d4; }
     }
   }
   
