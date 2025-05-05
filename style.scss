@@ -139,6 +139,14 @@ header {
       background-color: currentColor;
       width: 100%;
     }
+    .emne-topfelt img {
+      height: 107%; 
+      display: block;
+      margin-inline: auto; // centrerer
+      transform: translateX(15%); // skubber lidt mod højre
+      margin-bottom: -0.5rem; // hænger lidt ned i hvid boks
+    }
+    
   }
 
   .emne-tekst {

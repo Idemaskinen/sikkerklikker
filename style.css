@@ -136,6 +136,13 @@ nav {
   background-color: currentColor;
   width: 100%;
 }
+.emneboks .emne-topfelt img {
+  height: 107%;
+  display: block;
+  margin-inline: auto;
+  transform: translateX(15%);
+  margin-bottom: -0.5rem;
+}
 
 .emne-tekst {
   padding: 1rem 0.5rem;
