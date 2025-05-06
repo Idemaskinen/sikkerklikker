@@ -245,11 +245,50 @@ header {
         &:hover {
           background-color: #eee;
         }
+
+        &.aktiv-mail {
+          background-color: #ADBCDE; 
+        }
+        
       }
     }
     
   }
 
+  .indbakke {
+    position: relative; // så layover placeres i forhold til denne container
+  }
+  
+  .mail-layover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: white;
+    z-index: 10;
+    padding: 1rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+  
+    button.luk-mail {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.75rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #4E0229;
+      cursor: pointer;
+    }
+  }
+  
+  .skjul {
+    display: none;
+  }
+  
+  
   
     
   /*De tre emne-bokse*/
