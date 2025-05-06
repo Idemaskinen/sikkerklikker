@@ -141,21 +141,35 @@ nav {
 }
 
 /*email_test*/
+.indbakke-wrapper {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+.indbakke-topbjaelke {
+  height: 2rem;
+  background-color: #4E0229;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 .indbakke {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  max-width: 50rem;
-  margin: 2rem auto;
   background: white;
   border: 1px solid #4E0229;
-  border-radius: 8px;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
   overflow: hidden;
 }
-.indbakke .indbakke-liste {
+.indbakke .indbakke-liste,
+.indbakke .indbakke-visning {
   flex: 1;
-  background-color: #f9f9f9;
   padding: 1rem;
+}
+.indbakke .indbakke-liste {
+  background-color: #f9f9f9;
 }
 .indbakke .indbakke-visning {
   flex: 1;
@@ -163,6 +177,9 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  background: url("img/email_ikon.svg") no-repeat center center;
+  background-size: 40%;
+  min-height: 15rem;
 }
 
 /*De tre emne-bokse*/
@@ -290,6 +307,25 @@ nav {
   .hero {
     max-width: 90%;
   }
+  /* email-test */
+  .indbakke-wrapper {
+    max-width: 90%;
+  }
+  .indbakke {
+    flex-direction: column;
+  }
+  .indbakke-liste,
+  .indbakke-visning {
+    padding: 1rem;
+  }
+  .indbakke-liste {
+    max-height: 10rem;
+    overflow-y: auto;
+  }
+  .indbakke-visning {
+    border-top: 1px solid #4a002d;
+  }
+  /* de tre emnebokse */
   .emne-sektion {
     padding-block: 0 1rem;
   }
