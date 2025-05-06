@@ -200,6 +200,10 @@ header {
         margin-bottom: 0.5rem;
         cursor: pointer;
         font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
 
         .mail-cirkel {
           display: inline-flex;
@@ -212,22 +216,30 @@ header {
           color: #4E0229;
           font-weight: bold;
           font-size: 1rem;
-          flex-shrink: 0; // så den ikke presses sammen
-        }
+          flex-shrink: 0;
+
+          &.pink {
+            background-color: #DCAFC6; 
+          }
         
-    
-        &.sikker {
-          color: #004d40;
+          &.blaa {
+            background-color: #ADBCDE; 
+          }
+        
+          &.mint {
+            background-color: #ADDADC; 
+          }
         }
-    
-        &.usikker {
-          color: #b71c1c;
-        }
-    
-        small {
-          display: block;
-          font-weight: normal;
+
+        .mail-tekst {
+          display: flex;
+          flex-direction: column;
           color: #4E0229;
+
+          small {
+            display: block;
+            font-weight: normal;
+          }
         }
     
         &:hover {
@@ -237,9 +249,7 @@ header {
     }
     
   }
-  
-
-  
+    
   /*De tre emne-bokse*/
   .emne-sektion {
     padding-block: 2rem;
