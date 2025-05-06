@@ -188,6 +188,54 @@ header {
       background-size: 40%;
       min-height: 15rem;
     }
+
+    .mailliste {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    
+      .mail-preview {
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+
+        .mail-cirkel {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          background-color: #DCAFC6;
+          color: #4E0229;
+          font-weight: bold;
+          font-size: 1rem;
+          flex-shrink: 0; // så den ikke presses sammen
+        }
+        
+    
+        &.sikker {
+          color: #004d40;
+        }
+    
+        &.usikker {
+          color: #b71c1c;
+        }
+    
+        small {
+          display: block;
+          font-weight: normal;
+          color: #4E0229;
+        }
+    
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+    
   }
   
 

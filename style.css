@@ -181,6 +181,45 @@ nav {
   background-size: 40%;
   min-height: 15rem;
 }
+.indbakke .mailliste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.indbakke .mailliste .mail-preview {
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.indbakke .mailliste .mail-preview .mail-cirkel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #DCAFC6;
+  color: #4E0229;
+  font-weight: bold;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.indbakke .mailliste .mail-preview.sikker {
+  color: #004d40;
+}
+.indbakke .mailliste .mail-preview.usikker {
+  color: #b71c1c;
+}
+.indbakke .mailliste .mail-preview small {
+  display: block;
+  font-weight: normal;
+  color: #4E0229;
+}
+.indbakke .mailliste .mail-preview:hover {
+  background-color: #eee;
+}
 
 /*De tre emne-bokse*/
 .emne-sektion {
