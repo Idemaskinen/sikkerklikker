@@ -156,7 +156,6 @@ nav {
 .indbakke {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
   background: white;
   border: 1px solid #4E0229;
   border-top: none;
@@ -172,6 +171,7 @@ nav {
   background-color: #f9f9f9;
 }
 .indbakke .indbakke-visning {
+  position: relative;
   flex: 1;
   display: flex;
   justify-content: center;
@@ -180,6 +180,7 @@ nav {
   background: url("img/email_ikon.svg") no-repeat center center;
   background-size: 40%;
   min-height: 15rem;
+  border-left: 1px solid #4E0229;
 }
 .indbakke .mailliste {
   list-style: none;
@@ -243,19 +244,18 @@ nav {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: white;
-  z-index: 10;
+  z-index: 2;
   padding: 1rem;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   border-left: 1px solid #ccc;
   overflow-y: auto;
 }
 .mail-layover button.luk-mail {
   position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
+  top: 1rem;
+  right: 1rem;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -409,6 +409,22 @@ nav {
   }
   .indbakke-visning {
     border-top: 1px solid #4a002d;
+    border-left: hidden;
+  }
+  .mail-layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: none;
+    border-top: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .mail-layover button.luk-mail {
+    top: 1rem;
+    right: 1rem;
   }
   /* de tre emnebokse */
   .emne-sektion {
