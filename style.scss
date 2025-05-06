@@ -47,16 +47,20 @@ header {
   }
   
   .logo img {
-    height: 40px;
+    height: 30px;
+    display: block;
   }
   
   /* Menu-knap */
   .nav-toggle {
+    display: flex;
+    align-items: center;
     background: none;
     border: none;
     color: white;
     font-size: 2rem;
     cursor: pointer;
+    transform: translateY(-1.5px)
   }
   
   .nav-toggle .close-icon {
@@ -136,9 +140,8 @@ header {
     }
   }
 
-  .underudvikling-tekst {
-    margin-bottom: 4rem;
-    border: 1px solid red;
+  .hero .underudvikling-tekst {
+    margin-bottom: 6.2rem;
   }
   
   /*De tre emne-bokse*/
