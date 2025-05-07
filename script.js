@@ -185,3 +185,74 @@ function opdaterPoint(point, mailNummer) {
   });
 }
 
+// === VURDERING FOR MAIL 3 (SIKKER MAIL + UDLØSER OPSAMLING) ===
+const vurderKnapSikker3 = document.querySelector('.vurder-sikker-3');
+const vurderKnapUsikker3 = document.querySelector('.vurder-usikker-3');
+const feedbackRigtigMail3 = document.querySelector('#feedback-rigtig-mail3');
+const feedbackForkertMail3 = document.querySelector('#feedback-forkert-mail3');
+
+[vurderKnapSikker3, vurderKnapUsikker3].forEach(knap => {
+  knap.addEventListener('click', () => {
+    const layover = knap.closest('.mail-layover');
+    const preview = document.querySelector('.mail-preview.aktiv-mail');
+    const cirkel = preview.querySelector('.mail-cirkel');
+
+    // Skjul vurderingsboks
+    const vurderingsboks = knap.closest('.vurderingsboks');
+    if (vurderingsboks) vurderingsboks.classList.add('skjul');
+
+    let point = 0;
+
+    if (knap.classList.contains('vurder-sikker-3')) {
+      feedbackRigtigMail3.classList.remove('skjul');
+      point = 1;
+    } else {
+      feedbackForkertMail3.classList.remove('skjul');
+      point = 0;
+    }
+
+    // Opdater pointvisning
+    const boks = layover.querySelector('.feedbackboks:not(.skjul) .point-visning');
+    if (boks) {
+      boks.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
+    }
+
+    cirkel.textContent = point;
+    cirkel.classList.add("vurderet");
+    preview.dataset.point = point;
+  });
+});
+
+// === SE SAMLET RESULTAT ===
+const afslutningsKnapper = document.querySelectorAll('.afslutnings-knap');
+afslutningsKnapper.forEach(knap => {
+  knap.addEventListener('click', () => {
+    const feedbackBokse = document.querySelectorAll('.feedbackboks');
+    feedbackBokse.forEach(boks => boks.classList.add('skjul'));
+
+    // Beregn samlet score
+    let samlet = 0;
+    mailPreviews.forEach(mail => {
+      samlet += Number(mail.dataset.point || 0);
+    });
+
+    // Vis score og vurdering
+    const scoreBoks = document.querySelector('#feedback-samlet');
+    const scoreVisning = scoreBoks.querySelector('.samlet-score-visning');
+
+    let kommentar = "";
+    if (samlet >= 5) {
+      kommentar = "Flot klaret! Du er godt på vej til at blive en Sikker Klikker.";
+    } else if (samlet >= 3) {
+      kommentar = "Godt forsøgt! Du fangede det meste – men der er plads til forbedring.";
+    } else {
+      kommentar = "Pas på! Det er vigtigt at lære faresignalerne at kende.";
+    }
+
+    scoreVisning.innerHTML = `Du har fået i alt <strong>${samlet} point</strong> ud af 6 mulige.<br>${kommentar}`;
+    scoreBoks.classList.remove('skjul');
+  });
+});
+
+
+

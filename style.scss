@@ -421,11 +421,25 @@ header {
     }
   }
 
-  
-  
   .point-visning {
     padding: 0.75rem;
   }
+
+  .indryk-liste {
+    padding-left: 2rem;
+  }
+
+  .afslutnings-knap {
+    background-color: #DCAFC6;
+    color: #4E0229;
+    padding: 0.5rem 1rem;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
   
   
   

@@ -64,7 +64,7 @@
                   </div>
                 </li>
                 <li class="mail-preview" data-mail="2">
-                  <span class="mail-cirkel blaa">L</span>
+                  <span class="mail-cirkel blaa">T</span>
                   <div class="mail-tekst">
                     Tandlægehuset<br><small>Bekræftelse på din aftale</small>
                   </div>
@@ -72,7 +72,7 @@
                 <li class="mail-preview" data-mail="3">
                   <span class="mail-cirkel mint">U</span>
                   <div class="mail-tekst">
-                    Usikker mail<br><small>Undertekst bla bla</small>
+                    Netbutik.dk<br><small>Ordrebekræftelse</small>
                   </div>
                 </li>
               </ul>
@@ -222,6 +222,52 @@
                   </div>
                 </div>
               </div>
+              <!-- Mail 3 -->
+              <div class="mail-layover skjul" data-mail="3">
+                <button class="luk-mail">&times;</button>
+                <h3>Tak for din betaling</h3>
+                <p><strong>Fra:</strong> kvittering@netbutik.dk</p><br>
+                <p>Kære Louise Nielsen,</p><br>
+                <p>Tak for din bestilling hos Netbutik.dk. Her er dine oplysninger:</p><br>
+                <ul class="indryk-liste">
+                  <li>Ordre: #48231</li>
+                  <li>Beløb: 179,00 kr.</li>
+                  <li>Betalingsmetode: MobilePay</li>
+                </ul><br>
+                <p>Vi sender en besked, når pakken er på vej.</p><br>
+                <p>Venlig hilsen<br>Netbutik.dk</p>
+              
+                <!-- vurdering -->
+                <div class="vurderingsboks">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap vurder-sikker-3">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker-3">Det er en usikker mail</button>
+                  </div>
+                </div>
+              
+                <!-- feedback korrekt -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail3">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Denne mail er helt legitim og indeholder ingen faresignaler.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap afslutnings-knap">Se samlet resultat</button>
+                  </div>
+                </div>
+              
+                <!-- feedback forkert -->
+                <div class="feedbackboks skjul" id="feedback-forkert-mail3">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Mailen er faktisk sikker og indeholder ingen faresignaler.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap afslutnings-knap">Se samlet resultat</button>
+                  </div>
+                </div>
+              </div>
+              
               
             
               <div class="mail-layover skjul" data-mail="2">
@@ -233,6 +279,13 @@
                 <button class="luk-mail">&times;</button>
                 <p>Indhold for mail 3</p>
               </div>
+
+              <div class="feedbackboks skjul" id="feedback-samlet">
+                <div class="indbakke-topbjaelke"></div>
+                <p class="vurderingsboks-tekst"><strong>Din samlede score:</strong></p>
+                <p class="samlet-score-visning"></p>
+              </div>
+              
             
             </div>
 
