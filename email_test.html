@@ -101,13 +101,23 @@
                 <p>Venlig hilsen,<br>
                 NordBank Sikkerhedsteam</p>
                 <!-- svar-boks -->
-                <div class="mail-interaktion">
+                <div class="vurderingsboks">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="mail-spoergsmaal">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
+                  <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
                   <div class="mail-knapper">
-                    <button class="knap primær-knap">Det er en sikker mail</button>
-                    <button class="knap sekundær-knap">Det er en usikker mail</button>
+                    <button class="knap primær-knap vurder-sikker">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
                   </div>
+                </div>
+
+                <div class="feedbackboks skjul" id="feedback-rigtig">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Godt fanget – mailen indeholder flere faresignaler.</p>
+                </div>
+                
+                <div class="feedbackboks skjul" id="feedback-forkert">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail er faktisk usikker. Prøv at kigge nærmere – hvad virker mistænkeligt?</p>
                 </div>
                 
               </div>

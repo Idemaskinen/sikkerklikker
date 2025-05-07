@@ -292,19 +292,10 @@ header {
     display: none;
   }
 
-  .mail-interaktion {
+  .vurderingsboks {
     margin-top: 2rem;
     border: 1px solid #4E0229;
     border-radius: 10px;
-  
-    .mail-spoergsmaal {
-      background-color: #f6f6f6;
-      padding: 0.75rem;
-      border-radius: 10px 10px 0 0;
-      font-weight: bold;
-      text-align: center;
-      color: #4E0229;
-    }
   
     .mail-knapper {
       display: flex;
@@ -333,6 +324,23 @@ header {
         border-radius: 10px 0 0 10px;
       }
     }
+ 
+  }
+
+  .vurderingsboks-tekst {
+    padding: 0.75rem;
+    border-radius: 10px;
+    font-weight: normal;
+    text-align: left;
+    color: #4E0229;
+  }
+
+  .feedbackboks {
+    margin-top: 2rem;
+    border: 1px solid #4E0229;
+    border-radius: 10px;
+    text-align: left;
+    color: #4E0229;
   }
   
   
@@ -425,8 +433,8 @@ header {
 
     // E-mail farver
     .emne-email & {
-      .primær-knap { background-color: #4a002d; }
-      .sekundær-knap { background-color: #d9b6c6; }
+      .primær-knap { background-color: #4E0229; }
+      .sekundær-knap { background-color: #DCAFC6; }
     }
 
     // E-handel farver
@@ -498,18 +506,17 @@ header {
     }
   
     .indbakke-visning {
-      border-top: 1px solid #4a002d; 
+      border-top: 1px solid #4E0229; 
       border-left: hidden;
     }
 
     .mail-layover {
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
       width: 100%;       // fyld hele indbakke-visningens bredde
-      height: 100%;
+      height: auto;
       border-left: none;
-      border-top: 1px solid #ccc;
       border-radius: 0;
       box-shadow: none;
       padding: 1rem;

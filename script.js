@@ -51,3 +51,19 @@ lukKnapper.forEach(knap => {
     mailPreviews.forEach(p => p.classList.remove('aktiv-mail'));
   });
 });
+
+const vurderKnapSikker = document.querySelector('.vurder-sikker');
+const vurderKnapUsikker = document.querySelector('.vurder-usikker');
+const vurderingsboks = document.querySelector('.vurderingsboks');
+const feedbackRigtig = document.querySelector('#feedback-rigtig');
+const feedbackForkert = document.querySelector('#feedback-forkert');
+
+vurderKnapSikker.addEventListener('click', () => {
+  vurderingsboks.classList.add('skjul');
+  feedbackForkert.classList.remove('skjul');
+});
+
+vurderKnapUsikker.addEventListener('click', () => {
+  vurderingsboks.classList.add('skjul');
+  feedbackRigtig.classList.remove('skjul');
+});
