@@ -230,6 +230,18 @@ nav {
 .indbakke .mailliste .mail-preview .mail-cirkel.mint {
   background-color: #ADDADC;
 }
+.indbakke .mailliste .mail-preview .mail-cirkel.vurderet {
+  color: #fff;
+}
+.indbakke .mailliste .mail-preview .mail-cirkel.vurderet.pink {
+  background-color: #4E0229;
+}
+.indbakke .mailliste .mail-preview .mail-cirkel.vurderet.blaa {
+  background-color: #011D59;
+}
+.indbakke .mailliste .mail-preview .mail-cirkel.vurderet.mint {
+  background-color: #014E52;
+}
 .indbakke .mailliste .mail-preview .mail-tekst {
   display: flex;
   flex-direction: column;
@@ -375,6 +387,10 @@ nav {
   font-weight: bold;
   font-size: 0.85rem;
   cursor: pointer;
+}
+
+.point-visning {
+  padding: 0.75rem;
 }
 
 /*De tre emne-bokse*/

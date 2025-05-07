@@ -58,15 +58,15 @@
               <!-- mails placeholders -->
               <ul class="mailliste">
                 <li class="mail-preview" data-mail="1">
-                  <span class="mail-cirkel pink">U</span>
+                  <span class="mail-cirkel pink">N</span>
                   <div class="mail-tekst">
-                    Usikker mail<br><small>Undertekst bla bla</small>
+                    NordBank Sikkerhedsteam<br><small>Din konto er midlertidigt låst</small>
                   </div>
                 </li>
                 <li class="mail-preview" data-mail="2">
-                  <span class="mail-cirkel blaa">S</span>
+                  <span class="mail-cirkel blaa">L</span>
                   <div class="mail-tekst">
-                    Sikker mail<br><small>Undertekst bla bla</small>
+                    Lægehuset<br><small>Bekræftelse af din tid</small>
                   </div>
                 </li>
                 <li class="mail-preview" data-mail="3">
@@ -83,6 +83,7 @@
             <!-- højre side: mail-visning -->
             <div class="indbakke-visning">
 
+              <!-- Mail 1-->
               <div class="mail-layover skjul" data-mail="1">
                 <button class="luk-mail">&times;</button>
                 <h3>Din konto er midlertidigt låst – handling påkrævet!</h3>
@@ -136,6 +137,7 @@
                 <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderende at mailen er usikker og spottede alle faresignaler korrekt.</p>
+                  <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
@@ -150,6 +152,7 @@
                     <li>Linket ser mistænkeligt ud</li>
                     <li>Mailen forsøger at skabe panik og haster</li>
                   </ul>
+                  <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
@@ -164,12 +167,62 @@
                     <li>Linket ser mistænkeligt ud</li>
                     <li>Mailen forsøger at skabe panik og haster</li>
                   </ul>
+                  <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
                 </div>
                 
               </div>
+              <!-- Mail 2-->
+              <div class="mail-layover skjul" data-mail="2">
+                <button class="luk-mail">&times;</button>
+                <h3>Bekræftelse på din tid hos Lægehuset</h3>
+                <p><strong>Fra:</strong> noreply@laegehuset.dk</p><br>
+                <p>Kære Louise Nielsen,</p><br>
+                <p>
+                  Dette er en automatisk bekræftelse på din aftale hos Lægehuset.
+                </p>
+                <p>
+                  <strong>Tidspunkt:</strong> Mandag den 12. maj kl. 14.30<br>
+                  <strong>Sted:</strong> Lægehuset, Parkvej 12, 6200 Aabenraa
+                </p>
+                <p>
+                  Har du spørgsmål til aftalen, er du velkommen til at kontakte os på 74 12 34 56.
+                </p><br>
+                <p>Med venlig hilsen<br>Lægehuset Aabenraa</p>
+              
+                <!-- svar-boks -->
+                <div class="vurderingsboks">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap vurder-sikker">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
+                  </div>
+                </div>
+              
+                <!-- Korrekt vurderet: mail er sikker -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail2">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Denne mail er sikker og ligner noget, man typisk får fra sin læge.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+              
+                <!-- Forkert vurdering -->
+                <div class="feedbackboks skjul" id="feedback-forkert-mail2">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail er faktisk sikker. Der er ingen faresignaler i indholdet.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+              </div>
+              
             
               <div class="mail-layover skjul" data-mail="2">
                 <button class="luk-mail">&times;</button>

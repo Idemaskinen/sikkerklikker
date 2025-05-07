@@ -59,7 +59,22 @@ const feedbackForkert = document.querySelector('#feedback-forkert');
 vurderKnapSikker.addEventListener('click', () => {
   vurderingsboks.classList.add('skjul');
   feedbackForkert.classList.remove('skjul');
+
+  // Opdater point (0)
+  const layover = vurderKnapSikker.closest(".mail-layover");
+  const preview = document.querySelector(`.mail-preview.aktiv-mail`);
+  const cirkel = preview.querySelector('.mail-cirkel');
+
+  cirkel.textContent = "0";
+  cirkel.classList.add("vurderet");
+  preview.dataset.point = "0";
+
+  const pointBoks = layover.querySelector("#feedback-forkert .point-visning");
+  if (pointBoks) {
+    pointBoks.innerHTML = `Du har fået <strong>0 point</strong> for denne mail.`;
+  }
 });
+
 
 vurderKnapUsikker.addEventListener('click', () => {
   vurderingsboks.classList.add('skjul');
@@ -89,9 +104,11 @@ const bekræftKnap = document.querySelector(".send-feedback-knap");
 
 bekræftKnap.addEventListener("click", () => {
   const layover = bekræftKnap.closest(".mail-layover");
+  const preview = document.querySelector(`.mail-preview.aktiv-mail`);
+  const cirkel = preview.querySelector('.mail-cirkel');
 
   const afkrydsninger = layover.querySelectorAll("input[type='checkbox']");
-  const mindstEnValgt = Array.from(afkrydsninger).some((boks) => boks.checked);
+  const mindstEnValgt = Array.from(afkrydsninger).some(b => b.checked);
 
   if (!mindstEnValgt) {
     alert("Du skal krydse af i mindst ét felt.");
@@ -99,20 +116,32 @@ bekræftKnap.addEventListener("click", () => {
   }
 
   const valgte = Array.from(afkrydsninger)
-    .filter((boks) => boks.checked)
-    .map((boks) => boks.value);
+    .filter(b => b.checked)
+    .map(b => b.value);
 
   const korrekte = ["afsender", "link", "panik"];
-  const erAlleKorrekte =
-    valgte.every((v) => korrekte.includes(v)) &&
-    valgte.length === korrekte.length;
+  const erAlleKorrekte = valgte.every(v => korrekte.includes(v)) && valgte.length === korrekte.length;
 
-  const feedbackRigtig = layover.querySelector("#feedback-rigtig");
-  if (feedbackRigtig) feedbackRigtig.classList.add("skjul");
+  // Skjul vurderingsboks
+  layover.querySelector("#feedback-rigtig").classList.add("skjul");
+
+  // Beregn point og vis feedback
+  let point = erAlleKorrekte ? 2 : 1;
+  const pointTekst = `Du har fået <strong>${point} point</strong> for denne mail.`;
 
   if (erAlleKorrekte) {
-    layover.querySelector("#feedback-rigtigt-rigtigt").classList.remove("skjul");
+    const boks = layover.querySelector("#feedback-rigtigt-rigtigt");
+    boks.classList.remove("skjul");
+    boks.querySelector(".point-visning").innerHTML = pointTekst;
   } else {
-    layover.querySelector("#feedback-rigtigt-forkert").classList.remove("skjul");
+    const boks = layover.querySelector("#feedback-rigtigt-forkert");
+    boks.classList.remove("skjul");
+    boks.querySelector(".point-visning").innerHTML = pointTekst;
   }
+
+  // Opdater preview-visning
+  cirkel.textContent = point;
+  cirkel.classList.add("vurderet");
+  preview.dataset.point = point;
 });
+

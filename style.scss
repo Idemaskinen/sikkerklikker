@@ -241,7 +241,21 @@ header {
             background-color: #ADDADC; 
           }
         }
-
+        .mail-cirkel.vurderet {
+          color: #fff;
+          &.pink {
+            background-color: #4E0229;
+          }
+        
+          &.blaa {
+            background-color: #011D59; 
+          }
+        
+          &.mint {
+            background-color: #014E52; 
+          }
+          
+        }
         .mail-tekst {
           display: flex;
           flex-direction: column;
@@ -406,8 +420,12 @@ header {
       cursor: pointer;
     }
   }
+
   
   
+  .point-visning {
+    padding: 0.75rem;
+  }
   
   
   
