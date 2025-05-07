@@ -83,7 +83,7 @@ naesteMailKnapper.forEach(knap => {
     if (index >= 0 && index < mails.length - 1) {
       mails[index].classList.remove('aktiv-mail');
       layovers[index].classList.add('skjul');
-      mails[index + 1].click(); // Åbn næste mail
+      mails[index + 1].click(); // aktiverer næste mail
     }
   });
 });
