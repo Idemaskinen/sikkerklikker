@@ -75,11 +75,32 @@ vurderKnapSikker.addEventListener('click', () => {
   }
 });
 
-
 vurderKnapUsikker.addEventListener('click', () => {
   vurderingsboks.classList.add('skjul');
   feedbackRigtig.classList.remove('skjul');
 });
+
+// === VURDERING FOR MAIL 2 (SIKKER MAIL) ===
+const vurderKnapperMail2 = document.querySelectorAll('.mail-layover[data-mail="2"] .mail-knapper .knap');
+const feedbackRigtigMail2 = document.querySelector('#feedback-rigtig-mail2');
+const feedbackForkertMail2 = document.querySelector('#feedback-forkert-mail2');
+
+vurderKnapperMail2.forEach(knap => {
+  knap.addEventListener('click', () => {
+    const vurderingsboks = knap.closest('.vurderingsboks');
+    if (vurderingsboks) vurderingsboks.classList.add('skjul');
+
+    const erRigtig = knap.classList.contains('vurder-sikker');
+    if (erRigtig) {
+      feedbackRigtigMail2.classList.remove('skjul');
+      opdaterPoint(1, 2); // 1 point for rigtig sikker vurdering
+    } else {
+      feedbackForkertMail2.classList.remove('skjul');
+      opdaterPoint(0, 2); // 0 point for forkert usikker vurdering
+    }
+  });
+});
+
 
 // === HÅNDTER NÆSTE-MAIL-KNAPPER ===
 const naesteMailKnapper = document.querySelectorAll('.naeste-mail-knap');
