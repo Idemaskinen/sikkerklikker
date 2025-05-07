@@ -100,6 +100,7 @@
                 </p><br>
                 <p>Venlig hilsen,<br>
                 NordBank Sikkerhedsteam</p>
+                
                 <!-- svar-boks -->
                 <div class="vurderingsboks">
                   <div class="indbakke-topbjaelke"></div>
@@ -110,11 +111,51 @@
                   </div>
                 </div>
 
+                <!-- Rigtigt valgt -->
                 <div class="feedbackboks skjul" id="feedback-rigtig">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Godt fanget – mailen indeholder flere faresignaler.</p>
+                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Godt fanget – mailen indeholder flere faresignaler.<br>Hvilke har du spottet?</p>
+                
+                  <form id="faresignal-form">
+                    <ul class="faresignaler-interaktiv">
+                      <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker uofficiel</label></li>
+                      <li><label><input type="checkbox" name="signal" value="link"> Linket ser mistænkeligt ud</label></li>
+                      <li><label><input type="checkbox" name="signal" value="panik"> Mailen forsøger at skabe panik og haster</label></li>
+                      <li><label><input type="checkbox" name="signal" value="grammatik"> Dårlig grammatik og sprogfejl</label></li>
+                      <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Mistænkelig vedhæftning</label></li>
+                      <li><label><input type="checkbox" name="signal" value="generisk"> Manglende personlig hilsen eller generisk tiltale</label></li>
+                    </ul>
+                
+                    <div class="send-feedback-knap-wrapper">
+                      <button type="button" class="knap send-feedback-knap">Bekræft</button>
+                    </div>
+                  </form>
                 </div>
                 
+                <!-- Rigtigt valgt + rigtige faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du spottede alle faresignaler korrekt.</p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+                
+                <!-- Rigtigt valgt + ikke alle faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i, at mailen er usikker – men der var flere faresignaler, du kunne have spottet.</p>
+                  <ul class="faresignaler">
+                    <li>Afsenderens e-mail virker uofficiel</li>
+                    <li>Linket ser mistænkeligt ud</li>
+                    <li>Mailen forsøger at skabe panik og haster</li>
+                  </ul>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+                
+                <!-- Forkert valgt-->
                 <div class="feedbackboks skjul" id="feedback-forkert">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail er faktisk usikker. Prøv at kigge nærmere – hvad virker mistænkeligt?</p>
@@ -126,8 +167,6 @@
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
-                  
-                  
                 </div>
                 
               </div>
