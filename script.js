@@ -25,18 +25,29 @@ navToggle.addEventListener('click', () => {
 
 //MAILVISNING
 const mailPreviews = document.querySelectorAll('.mail-preview');
-const layover = document.querySelector('.mail-layover');
-const lukKnap = document.querySelector('.luk-mail');
+const layovers = document.querySelectorAll('.mail-layover');
+const lukKnapper = document.querySelectorAll('.luk-mail');
 
 mailPreviews.forEach(preview => {
   preview.addEventListener('click', () => {
-    mailPreviews.forEach(p => p.classList.remove('aktiv-mail')); // fjern tidligere aktiv
+    const valgtMail = preview.dataset.mail;
+
+    // Skjul alle layovers og fjern aktiv klasse
+    layovers.forEach(l => l.classList.add('skjul'));
+    mailPreviews.forEach(p => p.classList.remove('aktiv-mail'));
+
+    // Vis den rigtige mail
+    const aktivLayover = document.querySelector(`.mail-layover[data-mail="${valgtMail}"]`);
+    if (aktivLayover) aktivLayover.classList.remove('skjul');
+
     preview.classList.add('aktiv-mail');
-    layover.classList.remove('skjul');
   });
 });
 
-lukKnap.addEventListener('click', () => {
-  layover.classList.add('skjul');
-  mailPreviews.forEach(p => p.classList.remove('aktiv-mail'));
+lukKnapper.forEach(knap => {
+  knap.addEventListener('click', () => {
+    const layover = knap.closest('.mail-layover');
+    if (layover) layover.classList.add('skjul');
+    mailPreviews.forEach(p => p.classList.remove('aktiv-mail'));
+  });
 });
