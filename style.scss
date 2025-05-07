@@ -336,6 +336,7 @@ header {
     color: #4E0229;
   }
 
+  /* svar forkert */
   .feedbackboks {
     margin-top: 2rem;
     border: 1px solid #4E0229;
@@ -369,6 +370,43 @@ header {
     font-size: 0.85rem;
     cursor: pointer;
   }
+
+  /* svar rigtigt*/
+
+  .faresignaler-interaktiv {
+    padding: 1rem 2rem;
+    text-align: left;
+    color: #4E0229;
+    list-style: none;
+  
+    li {
+      margin-bottom: 0.75rem;
+  
+      input[type="checkbox"] {
+        margin-right: 0.5rem;
+        accent-color: #4E0229;
+        vertical-align: middle;
+        border-color: #4E0229;
+      }
+    }
+  }
+  
+  .send-feedback-knap-wrapper {
+    text-align: right;
+    margin-bottom: 1rem;
+  
+    .send-feedback-knap {
+      background-color: #DCAFC6;
+      color: #4E0229;
+      padding: 0.5rem 1rem;
+      border-radius: 10px 0 0 10px;
+      border: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+  }
+  
   
   
   

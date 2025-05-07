@@ -84,3 +84,22 @@ naesteMailKnap.addEventListener('click', () => {
     mails[index + 1].click(); // Trig næste mail
   }
 });
+
+const bekræftKnap = document.querySelector(".send-feedback-knap");
+
+bekræftKnap.addEventListener("click", () => {
+  const afkrydsninger = document.querySelectorAll(
+    "#faresignal-form input[type='checkbox']"
+  );
+
+  const mindstEnValgt = Array.from(afkrydsninger).some((boks) => boks.checked);
+
+  if (!mindstEnValgt) {
+    alert("Du skal krydse af i mindst ét felt.");
+    return;
+  }
+
+  // Her kan du indsætte næste trin – fx:
+  // document.getElementById("feedback-rigtigt").classList.add("skjul");
+  // document.getElementById("feedback-rigtigt-rigtigt").classList.remove("skjul");
+});
