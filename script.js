@@ -1,15 +1,12 @@
-// HEADER
-// Hent elementer
+// === HEADER-MENU TOGGLE ===
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const menuIcon = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon');
 
-// Når der klikkes på menu-knappen
 navToggle.addEventListener('click', () => {
   const isVisible = !navMenu.hasAttribute('hidden');
 
-  // Vis eller skjul menu
   if (isVisible) {
     navMenu.setAttribute('hidden', '');
     navToggle.setAttribute('aria-expanded', 'false');
@@ -23,27 +20,27 @@ navToggle.addEventListener('click', () => {
   }
 });
 
-//MAILVISNING
+// === VIS MAILINDHOLD VED KLIK ===
 const mailPreviews = document.querySelectorAll('.mail-preview');
 const layovers = document.querySelectorAll('.mail-layover');
-const lukKnapper = document.querySelectorAll('.luk-mail');
 
 mailPreviews.forEach(preview => {
   preview.addEventListener('click', () => {
     const valgtMail = preview.dataset.mail;
 
-    // Skjul alle layovers og fjern aktiv klasse
+    // Skjul alle
     layovers.forEach(l => l.classList.add('skjul'));
     mailPreviews.forEach(p => p.classList.remove('aktiv-mail'));
 
-    // Vis den rigtige mail
+    // Vis den valgte
     const aktivLayover = document.querySelector(`.mail-layover[data-mail="${valgtMail}"]`);
     if (aktivLayover) aktivLayover.classList.remove('skjul');
-
     preview.classList.add('aktiv-mail');
   });
 });
-// Lukke-kryds
+
+// === LUK MAIL ===
+const lukKnapper = document.querySelectorAll('.luk-mail');
 lukKnapper.forEach(knap => {
   knap.addEventListener('click', () => {
     const layover = knap.closest('.mail-layover');
@@ -52,7 +49,7 @@ lukKnapper.forEach(knap => {
   });
 });
 
-//mailknapper
+// === VURDER MAIL: SIKKER/USIKKER ===
 const vurderKnapSikker = document.querySelector('.vurder-sikker');
 const vurderKnapUsikker = document.querySelector('.vurder-usikker');
 const vurderingsboks = document.querySelector('.vurderingsboks');
@@ -69,9 +66,8 @@ vurderKnapUsikker.addEventListener('click', () => {
   feedbackRigtig.classList.remove('skjul');
 });
 
-// Næste mail – skift til næste mail i rækken
+// === HÅNDTER NÆSTE-MAIL-KNAPPER ===
 const naesteMailKnapper = document.querySelectorAll('.naeste-mail-knap');
-
 naesteMailKnapper.forEach(knap => {
   knap.addEventListener('click', () => {
     const aktiv = document.querySelector('.mail-preview.aktiv-mail');
@@ -83,13 +79,12 @@ naesteMailKnapper.forEach(knap => {
     if (index >= 0 && index < mails.length - 1) {
       mails[index].classList.remove('aktiv-mail');
       layovers[index].classList.add('skjul');
-      mails[index + 1].click(); // aktiverer næste mail
+      mails[index + 1].click(); // trigger næste mail
     }
   });
 });
 
-
-// Feedback ved korrekt vurdering og interaktivt valg af faresignaler
+// === FARESIGNALER: VURDER OG VIS FEEDBACK ===
 const bekræftKnap = document.querySelector(".send-feedback-knap");
 
 bekræftKnap.addEventListener("click", () => {
@@ -103,7 +98,6 @@ bekræftKnap.addEventListener("click", () => {
     return;
   }
 
-  // Tjek hvilke signaler der er markeret
   const valgte = Array.from(afkrydsninger)
     .filter((boks) => boks.checked)
     .map((boks) => boks.value);
@@ -113,11 +107,9 @@ bekræftKnap.addEventListener("click", () => {
     valgte.every((v) => korrekte.includes(v)) &&
     valgte.length === korrekte.length;
 
-  // Skjul 'feedback-rigtig'
   const feedbackRigtig = layover.querySelector("#feedback-rigtig");
   if (feedbackRigtig) feedbackRigtig.classList.add("skjul");
 
-  // Vis den rigtige feedbackboks
   if (erAlleKorrekte) {
     layover.querySelector("#feedback-rigtigt-rigtigt").classList.remove("skjul");
   } else {
