@@ -15,6 +15,15 @@ body {
     overflow-x: hidden;
   }
 
+h2 {
+  font-size: 1.9rem;
+}  
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
 /* === BAGGRUND === */
 .vandmaerke-wrapper {
   position: absolute;
@@ -166,6 +175,8 @@ header {
     border-top: none; 
     border-radius: 0 0 8px 8px;
     overflow: hidden;
+    font-size: 0.85rem;
+    position: relative;
   
     .indbakke-liste,
     .indbakke-visning {
@@ -183,10 +194,9 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1rem;
       background: url("img/email_ikon.svg") no-repeat center center;
       background-size: 40%;
-      min-height: 15rem;
+      min-height: 30rem;
       border-left:1px solid #4E0229;
     }
 
@@ -255,10 +265,6 @@ header {
     }
     
   }
-
-  .indbakke {
-    position: relative; // så layover placeres i forhold til denne container
-  }
   
   .mail-layover {
     position: absolute;
@@ -314,7 +320,6 @@ header {
     position: absolute;
     top: -2.8rem;
     left: 0.5rem;
-    font-size: 1.9rem;
     font-weight: normal;
     margin: 0;
   }
@@ -409,6 +414,22 @@ header {
     margin-bottom: 2rem;
   }
 
+  
+ /* === BREDFORMAT === */
+
+ @media (min-width: 768px) {
+  .indbakke {
+    .indbakke-liste {
+      flex: 0 0 40%;
+    }
+
+    .indbakke-visning {
+      flex: 0 0 60%;
+    }
+  }
+}
+
+
   /* === HOEJFORMAT === */
   @media (max-width: 768px) {
 
@@ -478,6 +499,8 @@ header {
 
     
   }
+
+
    
   
   
