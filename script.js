@@ -160,9 +160,28 @@ bekræftKnap.addEventListener("click", () => {
     boks.querySelector(".point-visning").innerHTML = pointTekst;
   }
 
-  // Opdater preview-visning
+  // Opdater preview-visning: farveændring og pointvisning
   cirkel.textContent = point;
   cirkel.classList.add("vurderet");
   preview.dataset.point = point;
 });
+
+function opdaterPoint(point, mailNummer) {
+  const preview = document.querySelector(`.mail-preview[data-mail="${mailNummer}"]`);
+  const layover = document.querySelector(`.mail-layover[data-mail="${mailNummer}"]`);
+  if (!preview || !layover) return;
+
+  const cirkel = preview.querySelector('.mail-cirkel');
+  if (cirkel) {
+    cirkel.textContent = point;
+    cirkel.classList.add('vurderet');
+  }
+
+  preview.dataset.point = point;
+
+  const pointBokse = layover.querySelectorAll('.point-visning');
+  pointBokse.forEach(boks => {
+    boks.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
+  });
+}
 
