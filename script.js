@@ -68,6 +68,7 @@ vurderKnapUsikker.addEventListener('click', () => {
   feedbackRigtig.classList.remove('skjul');
 });
 
+// Feedback forkert
 const naesteMailKnap = document.querySelector('.naeste-mail-knap');
 
 naesteMailKnap.addEventListener('click', () => {
@@ -85,6 +86,8 @@ naesteMailKnap.addEventListener('click', () => {
   }
 });
 
+// Feedback rigtigt
+
 const bekræftKnap = document.querySelector(".send-feedback-knap");
 
 bekræftKnap.addEventListener("click", () => {
@@ -93,13 +96,28 @@ bekræftKnap.addEventListener("click", () => {
   );
 
   const mindstEnValgt = Array.from(afkrydsninger).some((boks) => boks.checked);
-
+  //fejlmeddelelse ved ikke-valg
   if (!mindstEnValgt) {
     alert("Du skal krydse af i mindst ét felt.");
     return;
   }
 
-  // Her kan du indsætte næste trin – fx:
-  // document.getElementById("feedback-rigtigt").classList.add("skjul");
-  // document.getElementById("feedback-rigtigt-rigtigt").classList.remove("skjul");
+  // Tjek hvilke signaler der er markeret
+  const valgte = Array.from(afkrydsninger)
+  .filter(boks => boks.checked)
+  .map(boks => boks.value);
+
+  const korrekte = ["afsender", "link", "panik"];
+
+  const erAlleKorrekte = valgte.every(v => korrekte.includes(v)) && valgte.length === korrekte.length;
+
+  // Skjul denne boks
+  document.getElementById("feedback-rigtig").classList.add("skjul");
+
+  // Vis passende feedback
+  if (erAlleKorrekte) {
+    document.getElementById("feedback-rigtig-rigtig").classList.remove("skjul");
+  } else {
+    document.getElementById("feedback-rigtig-forkert").classList.remove("skjul");
+  }
 });
