@@ -43,7 +43,7 @@ mailPreviews.forEach(preview => {
     preview.classList.add('aktiv-mail');
   });
 });
-
+// Lukke-kryds
 lukKnapper.forEach(knap => {
   knap.addEventListener('click', () => {
     const layover = knap.closest('.mail-layover');
@@ -52,6 +52,7 @@ lukKnapper.forEach(knap => {
   });
 });
 
+//mailknapper
 const vurderKnapSikker = document.querySelector('.vurder-sikker');
 const vurderKnapUsikker = document.querySelector('.vurder-usikker');
 const vurderingsboks = document.querySelector('.vurderingsboks');
@@ -68,23 +69,25 @@ vurderKnapUsikker.addEventListener('click', () => {
   feedbackRigtig.classList.remove('skjul');
 });
 
-// Feedback forkert
-const naesteMailKnap = document.querySelector('.naeste-mail-knap');
+// Næste mail – skift til næste mail i rækken
+const naesteMailKnapper = document.querySelectorAll('.naeste-mail-knap');
 
-naesteMailKnap.addEventListener('click', () => {
-  const aktiv = document.querySelector('.mail-preview.aktiv-mail');
-  if (!aktiv) return;
+naesteMailKnapper.forEach(knap => {
+  knap.addEventListener('click', () => {
+    const aktiv = document.querySelector('.mail-preview.aktiv-mail');
+    if (!aktiv) return;
 
-  const mails = [...document.querySelectorAll('.mail-preview')];
-  const index = mails.indexOf(aktiv);
+    const mails = [...document.querySelectorAll('.mail-preview')];
+    const index = mails.indexOf(aktiv);
 
-  if (index >= 0 && index < mails.length - 1) {
-    mails[index].classList.remove('aktiv-mail');
-    layovers[index].classList.add('skjul');
-
-    mails[index + 1].click(); // Trig næste mail
-  }
+    if (index >= 0 && index < mails.length - 1) {
+      mails[index].classList.remove('aktiv-mail');
+      layovers[index].classList.add('skjul');
+      mails[index + 1].click(); // Åbn næste mail
+    }
+  });
 });
+
 
 // Feedback ved korrekt vurdering og interaktivt valg af faresignaler
 const bekræftKnap = document.querySelector(".send-feedback-knap");
