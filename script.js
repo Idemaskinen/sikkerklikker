@@ -86,17 +86,15 @@ naesteMailKnap.addEventListener('click', () => {
   }
 });
 
-// Feedback rigtigt
-
+// Feedback ved korrekt vurdering og interaktivt valg af faresignaler
 const bekræftKnap = document.querySelector(".send-feedback-knap");
 
 bekræftKnap.addEventListener("click", () => {
-  const afkrydsninger = document.querySelectorAll(
-    "#faresignal-form input[type='checkbox']"
-  );
+  const layover = bekræftKnap.closest(".mail-layover");
 
+  const afkrydsninger = layover.querySelectorAll("input[type='checkbox']");
   const mindstEnValgt = Array.from(afkrydsninger).some((boks) => boks.checked);
-  //fejlmeddelelse ved ikke-valg
+
   if (!mindstEnValgt) {
     alert("Du skal krydse af i mindst ét felt.");
     return;
@@ -104,20 +102,22 @@ bekræftKnap.addEventListener("click", () => {
 
   // Tjek hvilke signaler der er markeret
   const valgte = Array.from(afkrydsninger)
-  .filter(boks => boks.checked)
-  .map(boks => boks.value);
+    .filter((boks) => boks.checked)
+    .map((boks) => boks.value);
 
   const korrekte = ["afsender", "link", "panik"];
+  const erAlleKorrekte =
+    valgte.every((v) => korrekte.includes(v)) &&
+    valgte.length === korrekte.length;
 
-  const erAlleKorrekte = valgte.every(v => korrekte.includes(v)) && valgte.length === korrekte.length;
+  // Skjul 'feedback-rigtig'
+  const feedbackRigtig = layover.querySelector("#feedback-rigtig");
+  if (feedbackRigtig) feedbackRigtig.classList.add("skjul");
 
-  // Skjul denne boks
-  document.getElementById("feedback-rigtig").classList.add("skjul");
-
-  // Vis passende feedback
+  // Vis den rigtige feedbackboks
   if (erAlleKorrekte) {
-    document.getElementById("feedback-rigtig-rigtig").classList.remove("skjul");
+    layover.querySelector("#feedback-rigtigt-rigtigt").classList.remove("skjul");
   } else {
-    document.getElementById("feedback-rigtig-forkert").classList.remove("skjul");
+    layover.querySelector("#feedback-rigtigt-forkert").classList.remove("skjul");
   }
 });
