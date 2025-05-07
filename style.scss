@@ -308,6 +308,7 @@ header {
         flex: 1;
         padding: 0.5rem;
         font-weight: bold;
+        font-size: 0.85rem;
         border: none;
         cursor: pointer;
       }
@@ -341,6 +342,32 @@ header {
     border-radius: 10px;
     text-align: left;
     color: #4E0229;
+  }
+
+  .faresignaler {
+    padding: 1rem 2rem;
+    text-align: left;
+    color: #4E0229;
+  
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .naeste-mail-knap-wrapper {
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+
+  .naeste-mail-knap {
+    background-color: #DCAFC6;
+    color: #4E0229;
+    padding: 0.5rem 1rem;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
   }
   
   
@@ -440,19 +467,19 @@ header {
     // E-handel farver
     .emne-ehandel & {
       .primær-knap { background-color: #001a57; }
-      .sekundær-knap { background-color: #c2cce4; }
+      .sekundær-knap { background-color: #ADBCDE; }
     }
 
     // SoMe farver
     .emne-some & {
-      .primær-knap { background-color: #004344; }
-      .sekundær-knap { background-color: #b0d4d4; }
+      .primær-knap { background-color: #014E52; }
+      .sekundær-knap { background-color: #ADDADC; }
     }
   }
   
   // Farver (ændrer currentColor)
   .emne-email { color: #4E0229; }
-  .emne-ehandel { color: #011D59; }
+  .emne-ehandel { color: #001a57; }
   .emne-some { color: #014E52; }
 
   /* === FOOTER === */

@@ -67,3 +67,20 @@ vurderKnapUsikker.addEventListener('click', () => {
   vurderingsboks.classList.add('skjul');
   feedbackRigtig.classList.remove('skjul');
 });
+
+const naesteMailKnap = document.querySelector('.naeste-mail-knap');
+
+naesteMailKnap.addEventListener('click', () => {
+  const aktiv = document.querySelector('.mail-preview.aktiv-mail');
+  if (!aktiv) return;
+
+  const mails = [...document.querySelectorAll('.mail-preview')];
+  const index = mails.indexOf(aktiv);
+
+  if (index >= 0 && index < mails.length - 1) {
+    mails[index].classList.remove('aktiv-mail');
+    layovers[index].classList.add('skjul');
+
+    mails[index + 1].click(); // Trig næste mail
+  }
+});

@@ -288,6 +288,7 @@ nav {
   flex: 1;
   padding: 0.5rem;
   font-weight: bold;
+  font-size: 0.85rem;
   border: none;
   cursor: pointer;
 }
@@ -316,6 +317,31 @@ nav {
   border-radius: 10px;
   text-align: left;
   color: #4E0229;
+}
+
+.faresignaler {
+  padding: 1rem 2rem;
+  text-align: left;
+  color: #4E0229;
+}
+.faresignaler li {
+  margin-bottom: 0.5rem;
+}
+
+.naeste-mail-knap-wrapper {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.naeste-mail-knap {
+  background-color: #DCAFC6;
+  color: #4E0229;
+  padding: 0.5rem 1rem;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 /*De tre emne-bokse*/
@@ -407,13 +433,13 @@ nav {
   background-color: #001a57;
 }
 .emne-ehandel .emne-knapper .sekundær-knap {
-  background-color: #c2cce4;
+  background-color: #ADBCDE;
 }
 .emne-some .emne-knapper .primær-knap {
-  background-color: #004344;
+  background-color: #014E52;
 }
 .emne-some .emne-knapper .sekundær-knap {
-  background-color: #b0d4d4;
+  background-color: #ADDADC;
 }
 
 .emne-email {
@@ -421,7 +447,7 @@ nav {
 }
 
 .emne-ehandel {
-  color: #011D59;
+  color: #001a57;
 }
 
 .emne-some {
