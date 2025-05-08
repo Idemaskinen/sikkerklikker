@@ -222,7 +222,97 @@
                   </div>
                 </div>
               </div>
-              
+              <!-- Falsk konkurrence – data-mail="4" -->
+              <div class="mail-layover skjul" data-mail="4">
+                <button class="luk-mail">&times;</button>
+                <h3>Tillykke! Du har vundet en iPhone</h3>
+                <p><strong>Fra:</strong> konkurrence@quickbonus-premier.net</p><br>
+                <p>Kære bruger,</p><br>
+                <p>
+                  Du er blevet udvalgt som den heldige vinder af vores lodtrækning i denne uge! Din præmie: en spritny iPhone 14 Pro.
+                </p>
+                <p>
+                  For at modtage din præmie, skal du blot udfylde dine leveringsoplysninger og betale et lille fragtgebyr på 29 kr. via dette link:<br>
+                  <a href="#">www.quickbonus.dk/vind-præmie</a>
+                </p>
+                <p>
+                  Skynd dig – tilbuddet udløber om 12 timer!
+                </p><br>
+                <p>Med venlig hilsen,<br>
+                QuickBonus Team</p>
+
+                <!-- svar-boks -->
+                <div class="vurderingsboks">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap vurder-sikker">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
+                  </div>
+                </div>
+
+                <!-- Rigtigt valgt -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail4">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Godt fanget!</strong> Denne mail er et klassisk eksempel på phishing. Hvilke faresignaler fangede du?</p>
+
+                  <form id="faresignal-form-mail4">
+                    <ul class="faresignaler-interaktiv">
+                      <li><label><input type="checkbox" name="signal" value="gevinst"> Uventet gevinst</label></li>
+                      <li><label><input type="checkbox" name="signal" value="betaling"> Kræver betaling for præmie</label></li>
+                      <li><label><input type="checkbox" name="signal" value="link"> Mistænkeligt link</label></li>
+                      <li><label><input type="checkbox" name="signal" value="afsender"> Uofficiel afsenderadresse</label></li>
+                      <li><label><input type="checkbox" name="signal" value="panik"> Tidspres / nedtælling</label></li>
+                      <li><label><input type="checkbox" name="signal" value="grammatik"> Dårligt sprog</label></li>
+                    </ul>
+                    <div class="send-feedback-knap-wrapper">
+                      <button type="button" class="knap send-feedback-knap">Bekræft</button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Rigtigt valgt + rigtige faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt-mail4">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderede korrekt, at mailen var usikker – og du spottede alle faresignaler.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+
+                <!-- Rigtigt valgt, men ikke alle faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert-mail4">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i, at mailen er usikker – men der var flere faresignaler, du kunne have opdaget.</p>
+                  <ul class="faresignaler">
+                    <li>Uventet gevinst</li>
+                    <li>Mistænkeligt link</li>
+                    <li>Tidspres / trussel</li>
+                  </ul>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+
+                <!-- Forkert valgt -->
+                <div class="feedbackboks skjul" id="feedback-forkert-mail4">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail er usikker. Pas på mails, der lover præmier og kræver betaling – det er en klassisk fupmetode.</p>
+                  <ul class="faresignaler">
+                    <li>Uventet gevinst</li>
+                    <li>Kræver betaling for præmie</li>
+                    <li>Tidspres / trussel</li>
+                  </ul>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+              </div>
+
+
               <!-- Sidste mail -->
               <div class="mail-layover skjul" data-mail="3">
                 <button class="luk-mail">&times;</button>
