@@ -71,7 +71,7 @@
                 </li>
                 <!-- QuickBonus Preview-->
                 <li class="mail-preview" data-mail="4">
-                  <span class="mail-cirkel mint">N</span>
+                  <span class="mail-cirkel mint">Q</span>
                   <div class="mail-tekst">
                     QuickBonus<br><small>Du har vundet!</small>
                   </div>
@@ -83,13 +83,28 @@
                    Boguniverset <br><small>Ordrebekræftelse #843921</small>
                   </div>
                 </li>
-                 <!-- Pakkeservice Prieview -->
-                 <li class="mail-preview" data-mail="5">
-                  <span class="mail-cirkel pink">B</span>
+                <!-- PostSyd Prieview -->
+                 <li class="mail-preview" data-mail="6">
+                  <span class="mail-cirkel pink">P</span>
                   <div class="mail-tekst">
-                   Boguniverset <br><small>Ordrebekræftelse #843921</small>
+                   PostSyd <br><small>Din pakke venter</small>
+                  </div>
+                 </li>
+                <!--IT-Support Preview-->
+                <li class="mail-preview" data-mail="7">
+                  <span class="mail-cirkel mint">I</span>
+                  <div class="mail-tekst">
+                    IT-Support<br><small>Vigtig: Din adgangskode udløber</small>
                   </div>
                 </li>
+                <!--Preview-->
+                <li class="mail-preview" data-mail="8">
+                  <span class="mail-cirkel blaa">T</span>
+                  <div class="mail-tekst">
+                    T<br><small>B</small>
+                  </div>
+                </li>
+                <!--Preview-->
                 <!-- Sidste mail (data-mail 3)-->
                 <li class="mail-preview" data-mail="3">
                   <span class="mail-cirkel mint">N</span>
@@ -389,8 +404,7 @@
                     <button class="knap naeste-mail-knap">Se din samlede score</button>
                   </div>
                 </div>
-              </div>
-              
+              </div>              
               <!-- PostSyd Mailvisning-->
               <div class="mail-layover skjul" data-mail="6">
                 <button class="luk-mail">&times;</button>
@@ -422,9 +436,9 @@
                 </div>
               
                 <!-- Feedback korrekt -->
-                <div class="feedbackboks skjul" id="feedback-rigtig">
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail6">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Godt spottet!</strong> Dette er en falsk mail, der udgiver sig for at være fra PostSyd.</p>
+                  <p class="vurderingsboks-tekst"><strong>Godt spottet!</strong> Dette er en falsk mail, der udgiver sig for at være fra PostSyd.Hvilke faresignaler har du registreret?</p>
                   <form id="faresignal-form">
                     <ul class="faresignaler-interaktiv">
                       <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker mistænkelig</label></li>
@@ -439,7 +453,7 @@
                 </div>
               
                 <!-- Feedback: korrekt vurdering + alle faresignaler -->
-                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt">
+                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt-mail6">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderede korrekt og spottede alle faresignaler i denne falske leverings-mail.</p>
                   <p class="point-visning"></p>
@@ -449,7 +463,7 @@
                 </div>
               
                 <!-- Feedback: korrekt vurdering + manglende faresignaler -->
-                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert">
+                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert-mail6">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i, at mailen er usikker – men der var flere faresignaler, du kunne have spottet.</p>
                   <ul class="faresignaler">
@@ -465,7 +479,7 @@
                 </div>
               
                 <!-- Feedback: forkert vurdering -->
-                <div class="feedbackboks skjul" id="feedback-forkert">
+                <div class="feedbackboks skjul" id="feedback-forkert-mail6">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Du har vurderet at denne mail er sikker, men det er den ikke. Svindlere udgiver sig ofte for pakkeservices som PostSyd.</p>
                   <ul class="faresignaler">
@@ -480,7 +494,96 @@
                   </div>
                 </div>
               </div>
-              
+              <!-- IT-Support Mailvisning-->
+              <div class="mail-layover skjul" data-mail="7">
+                <button class="luk-mail">&times;</button>
+                <h3>Vigtig: Din adgangskode udløber i dag – opdater nu</h3>
+                <p><strong>Fra:</strong> it-support@dinvirksomhed-sikker.net</p><br>
+                <p>Kære medarbejder,</p><br>
+                <p>
+                  Vores system har registreret, at din adgangskode udløber i dag. For at undgå afbrydelse i adgangen til din e-mail og interne systemer, bedes du opdatere din kode omgående.
+                </p>
+                <p>
+                  Klik på følgende link og følg instruktionerne:<br>
+                  <a href="#">dinvirksomhed.dk/login-sikkerhed</a>
+                </p>
+                <p>
+                  Hvis du ikke foretager dig noget inden for 12 timer, lukkes din konto midlertidigt.
+                </p><br>
+                <p>Venlig hilsen,<br>
+                IT-Support</p>
+
+                <!-- Vurderingsboks -->
+                <div class="vurderingsboks">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap vurder-sikker">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
+                  </div>
+                </div>
+
+                <!-- Feedback korrekt -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail7">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Godt spottet!</strong> Dette er en falsk mail, der udgiver sig for at være fra IT-afdelingen.</p>
+                  <form id="faresignal-form">
+                    <ul class="faresignaler-interaktiv">
+                      <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker uofficiel</label></li>
+                      <li><label><input type="checkbox" name="signal" value="panik"> Skaber panik og haster unødvendigt</label></li>
+                      <li><label><input type="checkbox" name="signal" value="link"> Linket ser troværdigt ud, men er falsk</label></li>
+                      <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Beder om handling uden officiel kanal</label></li>
+                    </ul>
+                    <div class="send-feedback-knap-wrapper">
+                      <button type="button" class="knap send-feedback-knap">Bekræft</button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- Feedback: korrekt vurdering + alle faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt-mail7">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderede korrekt og spottede alle faresignaler i denne IT-svindel.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+
+                <!-- Feedback: korrekt vurdering + manglende faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert-mail7">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i, at mailen er usikker – men der var flere faresignaler, du kunne have spottet.</p>
+                  <ul class="faresignaler">
+                    <li>Afsenderens e-mail virker uofficiel</li>
+                    <li>Skaber panik og haster unødvendigt</li>
+                    <li>Linket ser troværdigt ud, men er falsk</li>
+                    <li>Beder om handling uden officiel kanal</li>
+                  </ul>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+
+                <!-- Feedback: forkert vurdering -->
+                <div class="feedbackboks skjul" id="feedback-forkert-mail7">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail er faktisk usikker. Svindlere bruger ofte IT-trusler til at lokke brugere til falske login-sider.</p>
+                  <ul class="faresignaler">
+                    <li>Afsenderens e-mail virker uofficiel</li>
+                    <li>Skaber panik og haster unødvendigt</li>
+                    <li>Linket ser troværdigt ud, men er falsk</li>
+                    <li>Beder om handling uden officiel kanal</li>
+                  </ul>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+              </div>
+              <!--Mailvisning-->
+
 
 
               <!-- Sidste mail (data-mail 3)-->
@@ -554,7 +657,7 @@
                 </div>
                 <p class="emne-tekst">De fleste digitale angreb starter i indbakken. Lær at genkende svindel-mails, før du klikker.</p>
                 <div class="emne-knapper">
-                  <a href="email_test.html" class="knap primær-knap">Test din viden</a>
+                  <a href="email_test.html" class="knap primær-knap">Test igen</a>
                   <a href="under_udvikling.html" class="knap sekundær-knap">Læs guiden</a>
                 </div>
               </div>
