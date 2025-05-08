@@ -49,6 +49,25 @@ lukKnapper.forEach(knap => {
   });
 });
 
+// === HÅNDTER NÆSTE-MAIL-KNAPPER ===
+const naesteMailKnapper = document.querySelectorAll('.naeste-mail-knap');
+naesteMailKnapper.forEach(knap => {
+  knap.addEventListener('click', () => {
+    const aktivPreview = document.querySelector('.mail-preview.aktiv-mail');
+    const aktivLayover = document.querySelector('.mail-layover:not(.skjul)');
+    if (!aktivPreview || !aktivLayover) return;
+
+    const mails = [...document.querySelectorAll('.mail-preview')];
+    const index = mails.indexOf(aktivPreview);
+
+    if (index >= 0 && index < mails.length - 1) {
+      aktivPreview.classList.remove('aktiv-mail');
+      aktivLayover.classList.add('skjul');
+      mails[index + 1].click(); // Åbn næste mail
+    }
+  });
+});
+
 // === VURDERING FOR MAIL 1 ===
 const vurderKnapperMail1 = document.querySelectorAll('.mail-layover[data-mail="1"] .mail-knapper .knap');
 const feedbackRigtigMail1 = document.querySelector('#feedback-rigtig');
@@ -159,7 +178,7 @@ const feedbackForkert2 = document.querySelector('#feedback-forkert-mail2');
 });
 
 
-// === VURDERING FOR MAIL 4 (USIKKER MAIL) ===
+// === VURDERING FOR MAIL 4 ===
 const vurderKnapperMail4 = document.querySelectorAll('.mail-layover[data-mail="4"] .mail-knapper .knap');
 const feedbackRigtigMail4 = document.querySelector('#feedback-rigtig-mail4');
 const feedbackForkertMail4 = document.querySelector('#feedback-forkert-mail4');
@@ -170,18 +189,20 @@ vurderKnapperMail4.forEach(knap => {
     const vurderingsboks = layover.querySelector('.vurderingsboks');
     if (vurderingsboks) vurderingsboks.classList.add('skjul');
 
-    const erRigtig = knap.classList.contains('vurder-usikker');
-    if (erRigtig) {
+    const preview = document.querySelector(`.mail-preview[data-mail="4"]`);
+    const cirkel = preview.querySelector('.mail-cirkel');
+
+    // Gem vurdering
+    const erUsikker = knap.classList.contains('vurder-usikker');
+    preview.dataset.vurdering = erUsikker ? "Usikker" : "Sikker";
+
+    if (erUsikker) {
       feedbackRigtigMail4.classList.remove('skjul');
     } else {
       feedbackForkertMail4.classList.remove('skjul');
-      
-      // Vis point og marker mailen
-      const preview = document.querySelector(`.mail-preview[data-mail="4"]`);
-      const cirkel = preview.querySelector('.mail-cirkel');
       cirkel.textContent = "0";
-      cirkel.classList.add("vurderet");
       preview.dataset.point = "0";
+      cirkel.classList.add("vurderet");
 
       const pointVisning = layover.querySelector('#feedback-forkert-mail4 .point-visning');
       if (pointVisning) {
@@ -191,53 +212,6 @@ vurderKnapperMail4.forEach(knap => {
   });
 });
 
-// === FARESIGNALER VURDERING FOR MAIL 4 ===
-const bekræftKnapMail4 = document.querySelector('#faresignal-form-mail4 .send-feedback-knap');
-
-bekræftKnapMail4.addEventListener('click', () => {
-  const layover = bekræftKnapMail4.closest('.mail-layover');
-  const preview = document.querySelector(`.mail-preview[data-mail="4"]`);
-  const cirkel = preview.querySelector('.mail-cirkel');
-
-  const afkrydsninger = layover.querySelectorAll("input[type='checkbox']");
-  const mindstEnValgt = Array.from(afkrydsninger).some(b => b.checked);
-
-  if (!mindstEnValgt) {
-    alert("Du skal krydse af i mindst ét felt.");
-    return;
-  }
-
-  const valgte = Array.from(afkrydsninger)
-    .filter(b => b.checked)
-    .map(b => b.value);
-
-  const korrekte = ["gevinst", "betaling", "link", "afsender", "panik"];
-  const erAlleKorrekte =
-    valgte.every(v => korrekte.includes(v)) &&
-    valgte.length === korrekte.length;
-
-  // Skjul vurderings-feedback
-  feedbackRigtigMail4.classList.add("skjul");
-
-  // Beregn og vis point
-  let point = erAlleKorrekte ? 2 : 1;
-  const pointTekst = `Du har fået <strong>${point} point</strong> for denne mail.`;
-
-  if (erAlleKorrekte) {
-    const boks = layover.querySelector("#feedback-rigtigt-rigtigt-mail4");
-    boks.classList.remove("skjul");
-    boks.querySelector(".point-visning").innerHTML = pointTekst;
-  } else {
-    const boks = layover.querySelector("#feedback-rigtigt-forkert-mail4");
-    boks.classList.remove("skjul");
-    boks.querySelector(".point-visning").innerHTML = pointTekst;
-  }
-
-  // Opdater preview
-  cirkel.textContent = point;
-  cirkel.classList.add("vurderet");
-  preview.dataset.point = point;
-});
 
 // === VURDERING AF MAIL 5 (SIKKER><USIKKER) ===
 const købBoks = document.querySelector('.bekræft-køb-boks');
@@ -291,9 +265,7 @@ function visFeedbackMail5(erRigtigt) {
   feedbackBoks.querySelector('.point-visning').innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
 }
 
-// === VURDERING AF MAIL 6 (USIKKER) ===
-
-// === Mail 6: vurder SIKKER/USIKKER ===
+// === VURDERING AF MAIL 6 ===
 const vurderKnapperMail6 = document.querySelectorAll('.mail-layover[data-mail="6"] .mail-knapper .knap');
 const feedbackRigtigMail6 = document.querySelector('#feedback-rigtig-mail6');
 const feedbackForkertMail6 = document.querySelector('#feedback-forkert-mail6');
@@ -323,7 +295,7 @@ vurderKnapperMail6.forEach(knap => {
   });
 });
 
-// === Mail 6: Bekræft faresignaler ===
+  // === Faresignaler mail 6 ===
 const bekræftKnapMail6 = document.querySelector('#feedback-rigtig-mail6 .send-feedback-knap');
 
 bekræftKnapMail6.addEventListener('click', () => {
@@ -369,7 +341,7 @@ bekræftKnapMail6.addEventListener('click', () => {
   cirkel.classList.add("vurderet");
 });
 
-// === MAIL 7: IT-afdeling phishing ===
+// === VURDERING AF MAIL 7 ===
 const vurderKnapperMail7 = document.querySelectorAll('.mail-layover[data-mail="7"] .mail-knapper .knap');
 const feedbackRigtigMail7 = document.querySelector('#feedback-rigtig-mail7');
 const feedbackForkertMail7 = document.querySelector('#feedback-forkert-mail7');
@@ -402,7 +374,7 @@ vurderKnapperMail7.forEach(knap => {
   });
 });
 
-// === BEKRÆFT AFSKRYDSNINGER (FARESIGNALER) FOR MAIL 7 ===
+  // === Faresignaler mail 7 ===
 const bekræftMail7 = document.querySelector('#feedback-rigtig-mail7 .send-feedback-knap');
 bekræftMail7.addEventListener('click', () => {
   const layover = bekræftMail7.closest(".mail-layover");
@@ -445,7 +417,7 @@ bekræftMail7.addEventListener('click', () => {
   preview.dataset.point = point;
 });
 
-// === MAIL 8 – KONTEKSTBASERET ===
+// === VURDERING MAIL 8 – KONTEKSTBASERET ===
 const layoverMail8 = document.querySelector('.mail-layover[data-mail="8"]');
 const svarKender = layoverMail8.querySelector('.svar-kender');
 const svarKenderIkke = layoverMail8.querySelector('.svar-kender-ikke');
@@ -456,10 +428,10 @@ const vurderUsikker8 = layoverMail8.querySelector('.vurder-usikker');
 const feedbackRigtig8 = document.getElementById('feedback-rigtig-mail8');
 const feedbackForkert8 = document.getElementById('feedback-forkert-mail8');
 
-// Gem kontekstvalg
+  // Gem kontekstvalg
 let kenderAfsender = null;
 
-// Første valg: Kender/Nep
+  // Første valg: Kender/Nep
 svarKender.addEventListener('click', () => {
   kenderAfsender = true;
   vurderingKontekst.classList.add('skjul');
@@ -471,7 +443,7 @@ svarKenderIkke.addEventListener('click', () => {
   vurderingEndelig.classList.remove('skjul');
 });
 
-// Andet valg: Sikker/usikker
+  // Andet valg: Sikker/usikker
 const pointVisning = (element, point) => {
   const p = element.querySelector(".point-visning");
   if (p) p.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
