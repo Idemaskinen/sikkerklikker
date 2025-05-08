@@ -99,12 +99,13 @@
                 </li>
                 <!--Preview-->
                 <li class="mail-preview" data-mail="8">
-                  <span class="mail-cirkel blaa">T</span>
+                  <span class="mail-cirkel blaa">L</span>
                   <div class="mail-tekst">
-                    T<br><small>B</small>
+                    Louise<br><small>LOL</small>
                   </div>
                 </li>
                 <!--Preview-->
+
                 <!-- Sidste mail (data-mail 3)-->
                 <li class="mail-preview" data-mail="3">
                   <span class="mail-cirkel mint">N</span>
@@ -583,66 +584,62 @@
                 </div>
               </div>
               <!--Sjov video Mailvisning-->
-              <div class="mail-layover skjul" data-mail="10">
+              <div class="mail-layover skjul" data-mail="8">
                 <button class="luk-mail">&times;</button>
-                <h3>Se lige den her! 😂</h3>
-                <p><strong>Fra:</strong> louise1234@hotmail.com</p><br>
+                <h3>Se denne video – den er SÅ dig!</h3>
+                <p><strong>Fra:</strong> mikkel1985@gmail.com</p><br>
                 <p>Hey,</p><br>
-                <p>Den her video fik mig til at grine så meget – den minder mig helt om dig!</p>
-                <p><a href="#">bit.ly/4jG7yzX</a></p>
-                <p>Skriv hvad du synes 😄</p><br>
-                <p>– Louise</p>
-              
+                <p>Så denne video og kom straks til at tænke på dig 😂</p>
+                <p><a href="#">fun-share-vids.com/dk/upl123</a></p>
+                <p>Skriv hvis du ik kan åbne den!</p>
+                <p>//Mikkel</p>
+
                 <!-- Kontekstvalg -->
-                <div class="vurderingsboks" id="kontekstvalg-mail10">
+                <div class="vurderingsboks vurderingsboks-kontekst">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst">Kender du afsenderen, og plejer I at sende den slags til hinanden?</p>
+                  <p class="vurderingsboks-tekst">Kender du Mikkel – og plejer han at sende den slags mails?</p>
                   <div class="mail-knapper">
-                    <button class="knap primær-knap valg-kender">Ja, det gør jeg</button>
-                    <button class="knap sekundær-knap valg-ukendt">Nej, det gør jeg ikke</button>
+                    <button class="knap primær-knap svar-kender">Ja, det gør jeg</button>
+                    <button class="knap sekundær-knap svar-kender-ikke">Nej, det gør jeg ikke</button>
                   </div>
                 </div>
-              
-                <!-- Vurdering hvis kendt -->
-                <div class="vurderingsboks skjul" id="vurder-kender-mail10">
+
+                <!-- Sikker/Usikker valg (vises efter kontekstvalg) -->
+                <div class="vurderingsboks vurderingsboks-endelig skjul">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst">Hvordan vurderer du denne mail?</p>
                   <div class="mail-knapper">
-                    <button class="knap primær-knap vurder-sikker-kender">Det er en sikker mail</button>
-                    <button class="knap sekundær-knap vurder-usikker-kender">Det er en usikker mail</button>
+                    <button class="knap primær-knap vurder-sikker">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
                   </div>
                 </div>
-              
-                <!-- Vurdering hvis ukendt -->
-                <div class="vurderingsboks skjul" id="vurder-ukendt-mail10">
+
+                <!-- Feedback korrekt – afhængigt af kontekst -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail8">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst">Hvordan vurderer du denne mail?</p>
-                  <div class="mail-knapper">
-                    <button class="knap primær-knap vurder-sikker-ukendt">Det er en sikker mail</button>
-                    <button class="knap sekundær-knap vurder-usikker-ukendt">Det er en usikker mail</button>
-                  </div>
-                </div>
-              
-                <!-- Feedback for kendt -->
-                <div class="feedbackboks skjul" id="feedback-kontekst-kender">
-                  <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Det giver mening!</strong> Hvis du kender afsenderen, og det virker som noget I ofte deler, er det sandsynligvis ufarligt.</p>
-                  <p class="point-visning">Du har fået <strong>1 point</strong> for at vurdere i kontekst.</p>
+                  <p class="vurderingsboks-tekst"><strong>Godt vurderet!</strong> Du har taget konteksten med i din vurdering – og det er helt afgørende ved mails fra privatpersoner.</p>
+                  <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
                 </div>
-              
-                <!-- Feedback for ukendt -->
-                <div class="feedbackboks skjul" id="feedback-kontekst-ukendt">
+
+                <!-- Feedback forkert – ikke vurderet ud fra kontekst -->
+                <div class="feedbackboks skjul" id="feedback-forkert-mail8">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>God vurdering!</strong> Ukendte afsendere med links til “sjovt indhold” kan være phishing – lad være med at klikke!</p>
-                  <p class="point-visning">Du har fået <strong>1 point</strong> for at være kritisk.</p>
+                  <p class="vurderingsboks-tekst"><strong>Hmm...</strong> Denne type mail kræver kontekst. Hvis du ikke kender afsenderen, eller det er uventet, skal du ikke klikke.</p>
+                  <ul class="faresignaler">
+                    <li>Du ved ikke hvem afsenderen er</li>
+                    <li>Der gives ingen forklaring eller sammenhæng</li>
+                    <li>Linket er ukendt og kan føre til falsk side</li>
+                  </ul>
+                  <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
                 </div>
               </div>
+
               
 
 
