@@ -83,7 +83,14 @@
                    Boguniverset <br><small>Ordrebekræftelse #843921</small>
                   </div>
                 </li>
-                <!-- Sidste mail -->
+                 <!-- Pakkeservice Prieview -->
+                 <li class="mail-preview" data-mail="5">
+                  <span class="mail-cirkel pink">B</span>
+                  <div class="mail-tekst">
+                   Boguniverset <br><small>Ordrebekræftelse #843921</small>
+                  </div>
+                </li>
+                <!-- Sidste mail (data-mail 3)-->
                 <li class="mail-preview" data-mail="3">
                   <span class="mail-cirkel mint">N</span>
                   <div class="mail-tekst">
@@ -332,13 +339,11 @@
                 <h3>Tak for din bestilling – Ordrebekræftelse #843921</h3>
                 <p><strong>Fra:</strong> noreply@boguniverset.dk</p><br>
                 <p>Kære kunde,</p>
-                <p>
-                  Tak for din bestilling hos Boguniverset. Du har købt:
-                  <ul>
+                <p>Tak for din bestilling hos Boguniverset. Du har købt:</p><br>
+                  <ul class="indryk-liste">
                     <li>“Den Lille Havfrue – Illustreret udgave”</li>
                     <li>“Digitalt selvforsvar”</li>
-                  </ul>
-                </p>
+                  </ul><br>
                 <p>
                   Din ordre er bekræftet og bliver sendt inden for 1-3 hverdage.
                   Du kan følge ordren her:<br>
@@ -346,7 +351,67 @@
                 </p><br>
                 <p>Med venlig hilsen,<br>Boguniverset Kundeservice</p>
 
-                <!-- vurdering -->
+                <!-- Første spørgsmål: Har du købt noget -->
+                <div class="vurderingsboks bekræft-køb-boks">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Har du bestilt en vare fra dette firma?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap har-bestilt">Ja, det har jeg</button>
+                    <button class="knap sekundær-knap har-ikke-bestilt">Nej, det har jeg ikke</button>
+                  </div>
+                </div>
+              
+                <!-- Andet spørgsmål: Vurder mailens sikkerhed -->
+                <div class="vurderingsboks skjul vurderingsboks-bestilling">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Hvordan vurderer du denne mail?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap vurder-sikker-mail5">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker-mail5">Det er en usikker mail</button>
+                  </div>
+                </div>
+              
+                <!-- Feedback -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail5">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Du vurderede mailen rigtigt baseret på, om du selv har foretaget et køb.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Se din samlede score</button>
+                  </div>
+                </div>
+              
+                <div class="feedbackboks skjul" id="feedback-forkert-mail5">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Det er konteksten, der afgør, om du kan stole på denne type mail. Vurder ud fra, om du faktisk har bestilt noget.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Se din samlede score</button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- PostSyd Mailvisning-->
+              <div class="mail-layover skjul" data-mail="6">
+                <button class="luk-mail">&times;</button>
+                <h3>Din pakke er næsten fremme – betal gebyr for at modtage den</h3>
+                <p><strong>Fra:</strong> postsyd-info@pakkelevering.co</p><br>
+                <p>Kære kunde,</p><br>
+                <p>
+                  Vi har forsøgt at levere din pakke, men der mangler betaling af et lille håndteringsgebyr på 19 kr.
+                </p>
+                <p>
+                  For at få din pakke sendt videre, bedes du bekræfte leveringen og betale gebyret via linket herunder:
+                  <br>
+                  <a href="#">www.postsyd.dk/levering/info?id=23810</a>
+                </p>
+                <p>
+                  Hvis vi ikke hører fra dig inden 24 timer, bliver pakken returneret til afsender.
+                </p><br>
+                <p>Med venlig hilsen,<br>
+                PostSyd Kundeservice</p>
+              
+                <!-- Vurderingsboks -->
                 <div class="vurderingsboks">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
@@ -355,56 +420,59 @@
                     <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
                   </div>
                 </div>
-
-                <!-- Feedback forkert -->
-                <div class="feedbackboks skjul" id="feedback-forkert-mail5">
+              
+                <!-- Feedback korrekt -->
+                <div class="feedbackboks skjul" id="feedback-rigtig">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail virker faktisk troværdig og ser ud til at komme fra en rigtig butik.</p>
-                  <p class="point-visning"></p>
-                  <div class="naeste-mail-knap-wrapper">
-                    <button class="knap naeste-mail-knap">Næste mail</button>
-                  </div>
-                </div>
-
-                <!-- Feedback rigtig -->
-                <div class="feedbackboks skjul" id="feedback-rigtig-mail5">
-                  <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Mailen er sandsynligvis ægte – hvad tyder på det?</p>
-                  
-                  <form id="faresignal-form-mail5">
+                  <p class="vurderingsboks-tekst"><strong>Godt spottet!</strong> Dette er en falsk mail, der udgiver sig for at være fra PostSyd.</p>
+                  <form id="faresignal-form">
                     <ul class="faresignaler-interaktiv">
-                      <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker officiel</label></li>
-                      <li><label><input type="checkbox" name="signal" value="egenbestilling"> Mailen refererer til en konkret bestilling jeg selv har foretaget</label></li>
-                      <li><label><input type="checkbox" name="signal" value="ingenvedh"> Der er ingen vedhæftede filer</label></li>
-                      <li><label><input type="checkbox" name="signal" value="kendturl"> Linket går til en kendt og forventet URL</label></li>
-                      <li><label><input type="checkbox" name="signal" value="neutralton"> Mailen indeholder ikke pres, trusler eller belønning</label></li>
+                      <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker mistænkelig</label></li>
+                      <li><label><input type="checkbox" name="signal" value="link"> Linket er langt og ser falsk ud</label></li>
+                      <li><label><input type="checkbox" name="signal" value="panik"> Truer med konsekvens hvis du ikke reagerer hurtigt</label></li>
+                      <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Beder dig downloade eller klikke uden god grund</label></li>
                     </ul>
                     <div class="send-feedback-knap-wrapper">
-                      <button type="button" class="knap send-feedback-knap" id="send-feedback-knap-mail5">Bekræft</button>
+                      <button type="button" class="knap send-feedback-knap">Bekræft</button>
                     </div>
                   </form>
                 </div>
-
-                <!-- korrekt vurdering + korrekt signaler -->
-                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt-mail5">
+              
+                <!-- Feedback: korrekt vurdering + alle faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderede korrekt at mailen var sikker og spottede alle relevante tegn.</p>
+                  <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderede korrekt og spottede alle faresignaler i denne falske leverings-mail.</p>
                   <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
                     <button class="knap naeste-mail-knap">Næste mail</button>
                   </div>
                 </div>
-
-                <!-- korrekt vurdering + ikke alle signaler -->
-                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert-mail5">
+              
+                <!-- Feedback: korrekt vurdering + manglende faresignaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i at mailen er sikker – men der var flere ting, der gjorde den troværdig.</p>
+                  <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i, at mailen er usikker – men der var flere faresignaler, du kunne have spottet.</p>
                   <ul class="faresignaler">
-                    <li>Afsenderens e-mail virker officiel</li>
-                    <li>Mailen refererer til en konkret bestilling jeg selv har foretaget</li>
-                    <li>Der er ingen vedhæftede filer</li>
-                    <li>Linket går til en kendt og forventet URL</li>
-                    <li>Mailen indeholder ikke pres, trusler eller belønning</li>
+                    <li>Afsenderens e-mail virker mistænkelig</li>
+                    <li>Linket er langt og ser falsk ud</li>
+                    <li>Truer med konsekvens hvis du ikke reagerer hurtigt</li>
+                    <li>Beder dig downloade eller klikke uden god grund</li>
+                  </ul>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+              
+                <!-- Feedback: forkert vurdering -->
+                <div class="feedbackboks skjul" id="feedback-forkert">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Du har vurderet at denne mail er sikker, men det er den ikke. Svindlere udgiver sig ofte for pakkeservices som PostSyd.</p>
+                  <ul class="faresignaler">
+                    <li>Afsenderens e-mail virker mistænkelig</li>
+                    <li>Linket er langt og ser falsk ud</li>
+                    <li>Truer med konsekvens hvis du ikke reagerer hurtigt</li>
+                    <li>Beder dig downloade eller klikke uden god grund</li>
                   </ul>
                   <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
@@ -412,9 +480,10 @@
                   </div>
                 </div>
               </div>
+              
 
 
-              <!-- Sidste mail -->
+              <!-- Sidste mail (data-mail 3)-->
               <div class="mail-layover skjul" data-mail="3">
                 <button class="luk-mail">&times;</button>
                 <h3>Ordrebekræftelse</h3>
@@ -466,22 +535,7 @@
                 </div>
 
               </div>
-              
-              
-            
-              <div class="mail-layover skjul" data-mail="2">
-                <button class="luk-mail">&times;</button>
-                <p>Indhold for mail 2</p>
-              </div>
-            
-              <div class="mail-layover skjul" data-mail="3">
-                <button class="luk-mail">&times;</button>
-                <p>Indhold for mail 3</p>
-              </div>
 
-              
-              
-            
             </div>
 
           </div> 
