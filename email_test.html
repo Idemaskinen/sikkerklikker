@@ -56,7 +56,7 @@
             <div class="indbakke-liste">
               <ul class="mailliste">
                 <!--Nordbank Preview-->
-                
+
                 <li class="mail-preview" data-mail="1">
                   <span class="mail-cirkel pink">N</span>
                   <div class="mail-tekst">
@@ -158,12 +158,14 @@
                 
                   <form id="faresignal-form">
                     <ul class="faresignaler-interaktiv">
+                      <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Mistænkelig vedhæftning</label></li>
                       <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker uofficiel</label></li>
+                      <li><label><input type="checkbox" name="signal" value="generisk"> Manglende personlig hilsen eller generisk tiltale</label></li>
                       <li><label><input type="checkbox" name="signal" value="link"> Linket ser mistænkeligt ud</label></li>
                       <li><label><input type="checkbox" name="signal" value="panik"> Mailen forsøger at skabe panik og haster</label></li>
                       <li><label><input type="checkbox" name="signal" value="grammatik"> Dårlig grammatik og sprogfejl</label></li>
-                      <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Mistænkelig vedhæftning</label></li>
-                      <li><label><input type="checkbox" name="signal" value="generisk"> Manglende personlig hilsen eller generisk tiltale</label></li>
+                      
+                      
                     </ul>
                 
                     <div class="send-feedback-knap-wrapper">
@@ -445,6 +447,8 @@
                     <ul class="faresignaler-interaktiv">
                       <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker mistænkelig</label></li>
                       <li><label><input type="checkbox" name="signal" value="link"> Linket er langt og ser falsk ud</label></li>
+                      <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Mistænkelig vedhæftning</label></li>
+                      <li><label><input type="checkbox" name="signal" value="generisk"> Manglende personlig hilsen eller generisk tiltale</label></li>
                       <li><label><input type="checkbox" name="signal" value="panik"> Truer med konsekvens hvis du ikke reagerer hurtigt</label></li>
                       <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Beder dig downloade eller klikke uden god grund</label></li>
                     </ul>
@@ -533,7 +537,9 @@
                     <ul class="faresignaler-interaktiv">
                       <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker uofficiel</label></li>
                       <li><label><input type="checkbox" name="signal" value="panik"> Skaber panik og haster unødvendigt</label></li>
+                      <li><label><input type="checkbox" name="signal" value="generisk"> Manglende personlig hilsen eller generisk tiltale</label></li>
                       <li><label><input type="checkbox" name="signal" value="link"> Linket ser troværdigt ud, men er falsk</label></li>
+                      <li><label><input type="checkbox" name="signal" value="grammatik"> Dårlig grammatik og sprogfejl</label></li>
                       <li><label><input type="checkbox" name="signal" value="vedhaeftning"> Beder om handling uden officiel kanal</label></li>
                     </ul>
                     <div class="send-feedback-knap-wrapper">
