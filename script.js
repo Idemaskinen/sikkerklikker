@@ -442,7 +442,7 @@ bekræftMail7.addEventListener('click', () => {
     .filter(b => b.checked)
     .map(b => b.value);
 
-  const korrekte = ["afsender", "panik", "link", "vedhaeftning"];
+  const korrekte = ["afsender", "panik","generisk", "link", "vedhaeftning"];
   const erAlleKorrekte = valgte.every(v => korrekte.includes(v)) && valgte.length === korrekte.length;
 
   // Skjul vurderings-feedback
