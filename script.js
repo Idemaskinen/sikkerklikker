@@ -68,6 +68,7 @@ vurderKnapSikker.addEventListener('click', () => {
   cirkel.textContent = "0";
   cirkel.classList.add("vurderet");
   preview.dataset.point = "0";
+  
 
   const pointBoks = layover.querySelector("#feedback-forkert .point-visning");
   if (pointBoks) {
@@ -470,40 +471,105 @@ bekræftMail7.addEventListener('click', () => {
   preview.dataset.point = point;
 });
 
+// === MAIL 8 – KONTEKSTBASERET ===
+const layoverMail8 = document.querySelector('.mail-layover[data-mail="8"]');
+const svarKender = layoverMail8.querySelector('.svar-kender');
+const svarKenderIkke = layoverMail8.querySelector('.svar-kender-ikke');
+const vurderingKontekst = layoverMail8.querySelector('.vurderingsboks-kontekst');
+const vurderingEndelig = layoverMail8.querySelector('.vurderingsboks-endelig');
+const vurderSikker8 = layoverMail8.querySelector('.vurder-sikker');
+const vurderUsikker8 = layoverMail8.querySelector('.vurder-usikker');
+const feedbackRigtig8 = document.getElementById('feedback-rigtig-mail8');
+const feedbackForkert8 = document.getElementById('feedback-forkert-mail8');
 
+// Gem kontekstvalg
+let kenderAfsender = null;
 
+// Første valg: Kender/Nep
+svarKender.addEventListener('click', () => {
+  kenderAfsender = true;
+  vurderingKontekst.classList.add('skjul');
+  vurderingEndelig.classList.remove('skjul');
+});
+svarKenderIkke.addEventListener('click', () => {
+  kenderAfsender = false;
+  vurderingKontekst.classList.add('skjul');
+  vurderingEndelig.classList.remove('skjul');
+});
 
-// === VURDERING FOR SIDSTE MAIL (SIKKER MAIL + UDLØSER OPSAMLING) ===
-const vurderKnapSikker3 = document.querySelector('.vurder-sikker-3');
-const vurderKnapUsikker3 = document.querySelector('.vurder-usikker-3');
-const feedbackRigtigMail3 = document.querySelector('#feedback-rigtig-mail3');
-const feedbackForkertMail3 = document.querySelector('#feedback-forkert-mail3');
+// Andet valg: Sikker/usikker
+const pointVisning = (element, point) => {
+  const p = element.querySelector(".point-visning");
+  if (p) p.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
+};
 
-[vurderKnapSikker3, vurderKnapUsikker3].forEach(knap => {
+vurderSikker8.addEventListener('click', () => {
+  vurderingEndelig.classList.add('skjul');
+
+  const preview = document.querySelector('.mail-preview.aktiv-mail');
+  const cirkel = preview.querySelector('.mail-cirkel');
+
+  if (kenderAfsender === true) {
+    feedbackRigtig8.classList.remove('skjul');
+    pointVisning(feedbackRigtig8, 1);
+    cirkel.textContent = "1";
+    preview.dataset.point = "1";
+  } else {
+    feedbackForkert8.classList.remove('skjul');
+    pointVisning(feedbackForkert8, 0);
+    cirkel.textContent = "0";
+    preview.dataset.point = "0";
+  }
+
+  cirkel.classList.add("vurderet");
+});
+
+vurderUsikker8.addEventListener('click', () => {
+  vurderingEndelig.classList.add('skjul');
+
+  const preview = document.querySelector('.mail-preview.aktiv-mail');
+  const cirkel = preview.querySelector('.mail-cirkel');
+
+  if (kenderAfsender === false) {
+    feedbackRigtig8.classList.remove('skjul');
+    pointVisning(feedbackRigtig8, 1);
+    cirkel.textContent = "1";
+    preview.dataset.point = "1";
+  } else {
+    feedbackForkert8.classList.remove('skjul');
+    pointVisning(feedbackForkert8, 0);
+    cirkel.textContent = "0";
+    preview.dataset.point = "0";
+  }
+
+  cirkel.classList.add("vurderet");
+});
+
+// === VURDERING FOR MAIL 99 (SIKKER MAIL) ===
+const vurderKnapSikker9 = document.querySelector('.vurder-sikker-99');
+const vurderKnapUsikker9 = document.querySelector('.vurder-usikker-99');
+const feedbackRigtigMail9 = document.querySelector('#feedback-rigtig-mail99');
+const feedbackForkertMail9 = document.querySelector('#feedback-forkert-mail99');
+
+[vurderKnapSikker9, vurderKnapUsikker9].forEach(knap => {
   knap.addEventListener('click', () => {
     const layover = knap.closest('.mail-layover');
     const preview = document.querySelector('.mail-preview.aktiv-mail');
     const cirkel = preview.querySelector('.mail-cirkel');
-
-    // Skjul vurderingsboks
     const vurderingsboks = knap.closest('.vurderingsboks');
     if (vurderingsboks) vurderingsboks.classList.add('skjul');
 
     let point = 0;
-
-    if (knap.classList.contains('vurder-sikker-3')) {
-      feedbackRigtigMail3.classList.remove('skjul');
+    if (knap.classList.contains('vurder-sikker-99')) {
+      feedbackRigtigMail9.classList.remove('skjul');
       point = 1;
     } else {
-      feedbackForkertMail3.classList.remove('skjul');
+      feedbackForkertMail9.classList.remove('skjul');
       point = 0;
     }
 
-    // Opdater pointvisning
     const boks = layover.querySelector('.feedbackboks:not(.skjul) .point-visning');
-    if (boks) {
-      boks.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
-    }
+    if (boks) boks.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
 
     cirkel.textContent = point;
     cirkel.classList.add("vurderet");
@@ -511,36 +577,50 @@ const feedbackForkertMail3 = document.querySelector('#feedback-forkert-mail3');
   });
 });
 
-// === SE SAMLET RESULTAT ===
+// === SAMLET RESULTAT OG OVERSIGT ===
 const afslutningsKnapper = document.querySelectorAll('.afslutnings-knap');
+
 afslutningsKnapper.forEach(knap => {
   knap.addEventListener('click', () => {
-    const feedbackBokse = document.querySelectorAll('.feedbackboks');
-    feedbackBokse.forEach(boks => boks.classList.add('skjul'));
+    document.querySelectorAll('.feedbackboks').forEach(b => b.classList.add('skjul'));
 
-    // Beregn samlet score
+    const mails = [...document.querySelectorAll('.mail-preview')];
     let samlet = 0;
-    mailPreviews.forEach(mail => {
-      samlet += Number(mail.dataset.point || 0);
+
+    const oversigt = document.querySelector('.vurderings-oversigt');
+    oversigt.innerHTML = "";
+
+    mails.forEach((mail, i) => {
+      const point = Number(mail.dataset.point || 0);
+      const vurdering = mail.dataset.vurdering || "Ikke vurderet";
+      samlet += point;
+
+      const navn = mail.querySelector('.mail-tekst')?.childNodes[0]?.textContent.trim() || `Mail ${i + 1}`;
+
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${i + 1}. ${navn}</strong><br>Vurdering: ${vurdering}<br>Point: ${point}`;
+      oversigt.appendChild(li);
     });
 
-    // Vis score og vurdering
+    // Samlet score og feedback
     const scoreBoks = document.querySelector('#feedback-samlet');
     const scoreVisning = scoreBoks.querySelector('.samlet-score-visning');
 
     let kommentar = "";
-    if (samlet >= 5) {
+    if (samlet >= 12) {
       kommentar = "Flot klaret! Du er godt på vej til at blive en Sikker Klikker.";
-    } else if (samlet >= 3) {
+    } else if (samlet >= 6) {
       kommentar = "Godt forsøgt! Du fangede det meste – men der er plads til forbedring.";
     } else {
       kommentar = "Pas på! Det er vigtigt at lære faresignalerne at kende.";
     }
 
-    scoreVisning.innerHTML = `Du har fået i alt <strong>${samlet} point</strong> ud af 6 mulige.<br>${kommentar}`;
+    scoreVisning.innerHTML = `Du har fået i alt <strong>${samlet} point</strong>.<br>${kommentar}`;
     scoreBoks.classList.remove('skjul');
   });
 });
+
+
 
 
 

@@ -59,21 +59,21 @@
                 <li class="mail-preview" data-mail="1">
                   <span class="mail-cirkel pink">N</span>
                   <div class="mail-tekst">
-                    NordBank Sikkerhedsteam<br><small>Din konto er midlertidigt låst</small>
+                    NordBank Sikkerhedsteam: <br><small>Din konto er midlertidigt låst</small>
                   </div>
                 </li>
                 <!-- Tandlægehuset Preview-->
                 <li class="mail-preview" data-mail="2">
                   <span class="mail-cirkel blaa">T</span>
                   <div class="mail-tekst">
-                    Tandlægehuset<br><small>Bekræftelse på din aftale</small>
+                    Tandlægehuset: <br><small>Bekræftelse på din aftale</small>
                   </div>
                 </li>
                 <!-- QuickBonus Preview-->
                 <li class="mail-preview" data-mail="4">
                   <span class="mail-cirkel mint">Q</span>
                   <div class="mail-tekst">
-                    QuickBonus<br><small>Du har vundet!</small>
+                    QuickBonus: <br><small>Du har vundet!</small>
                   </div>
                 </li>
                 <!-- Boguniverset Prieview -->
@@ -87,30 +87,30 @@
                  <li class="mail-preview" data-mail="6">
                   <span class="mail-cirkel pink">P</span>
                   <div class="mail-tekst">
-                   PostSyd <br><small>Din pakke venter</small>
+                   PostSyd: <br><small>Din pakke venter</small>
                   </div>
                  </li>
                 <!--IT-Support Preview-->
                 <li class="mail-preview" data-mail="7">
                   <span class="mail-cirkel mint">I</span>
                   <div class="mail-tekst">
-                    IT-Support<br><small>Vigtig: Din adgangskode udløber</small>
+                    IT-Support: <br><small>Vigtig: Din adgangskode udløber</small>
                   </div>
                 </li>
-                <!--Preview-->
+                <!--Mikkel Preview-->
                 <li class="mail-preview" data-mail="8">
                   <span class="mail-cirkel blaa">L</span>
                   <div class="mail-tekst">
-                    Louise<br><small>LOL</small>
+                    Mikkel: <br><small>LOL</small>
                   </div>
                 </li>
                 <!--Preview-->
 
-                <!-- Sidste mail (data-mail 3)-->
-                <li class="mail-preview" data-mail="3">
+                <!--Netbutik.dk(se samlet score)-->
+                <li class="mail-preview" data-mail="99">
                   <span class="mail-cirkel mint">N</span>
                   <div class="mail-tekst">
-                    Netbutik.dk<br><small>Ordrebekræftelse</small>
+                    Netbutik.dk: <br><small>Ordrebekræftelse</small>
                   </div>
                 </li>
               </ul>
@@ -583,7 +583,7 @@
                   </div>
                 </div>
               </div>
-              <!--Sjov video Mailvisning-->
+              <!-- Mikkel (sjov video) Mailvisning-->
               <div class="mail-layover skjul" data-mail="8">
                 <button class="luk-mail">&times;</button>
                 <h3>Se denne video – den er SÅ dig!</h3>
@@ -639,12 +639,8 @@
                   </div>
                 </div>
               </div>
-
-              
-
-
-              <!-- Sidste mail (data-mail 3)-->
-              <div class="mail-layover skjul" data-mail="3">
+              <!-- Netbutik.dk Mailvisning (Samlet vurdering og afslutning)-->
+              <div class="mail-layover skjul" data-mail="99">
                 <button class="luk-mail">&times;</button>
                 <h3>Ordrebekræftelse</h3>
                 <p><strong>Fra:</strong> kvittering@netbutik.dk</p><br>
@@ -657,19 +653,19 @@
                 </ul><br>
                 <p>Vi sender en besked, når pakken er på vej.</p><br>
                 <p>Venlig hilsen<br>Netbutik.dk</p>
-              
+
                 <!-- vurdering -->
                 <div class="vurderingsboks">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
                   <div class="mail-knapper">
-                    <button class="knap primær-knap vurder-sikker-3">Det er en sikker mail</button>
-                    <button class="knap sekundær-knap vurder-usikker-3">Det er en usikker mail</button>
+                    <button class="knap primær-knap vurder-sikker-99">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker-99">Det er en usikker mail</button>
                   </div>
                 </div>
-              
+
                 <!-- feedback korrekt -->
-                <div class="feedbackboks skjul" id="feedback-rigtig-mail3">
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail99">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Denne mail er helt legitim og indeholder ingen faresignaler.</p>
                   <p class="point-visning"></p>
@@ -677,9 +673,9 @@
                     <button class="knap afslutnings-knap">Se samlet resultat</button>
                   </div>
                 </div>
-              
+
                 <!-- feedback forkert -->
-                <div class="feedbackboks skjul" id="feedback-forkert-mail3">
+                <div class="feedbackboks skjul" id="feedback-forkert-mail99">
                   <div class="indbakke-topbjaelke"></div>
                   <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Mailen er faktisk sikker og indeholder ingen faresignaler.</p>
                   <p class="point-visning"></p>
@@ -688,20 +684,28 @@
                   </div>
                 </div>
 
+                <!-- Samlet oversigt -->
                 <div class="feedbackboks skjul" id="feedback-samlet">
                   <div class="indbakke-topbjaelke"></div>
-                  <p class="vurderingsboks-tekst"><strong>Din samlede score:</strong></p>
-                  <p class="vurderingsboks-tekst samlet-score-visning"></p>
+                  <div class="vurderingsboks-tekst">
+                    <p><strong>Din samlede score:</strong></p>
+                    <p class="samlet-score-visning"></p><br>
+                    <p>Dine Svar:</p><br>
+                    <div class="indryk-liste">
+                    <ul class="vurderings-oversigt"></ul>
+                    </div>
+                  </div>
                 </div>
 
               </div>
+
 
             </div>
 
           </div> 
         </section>
 
-        <!-- de tre emne-bokse -->
+      <!-- DE TRE EMNEBOKSE -->
         <section class="emne-sektion">
           <div class="emneboks-wrapper">
 
