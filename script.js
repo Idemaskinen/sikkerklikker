@@ -124,6 +124,39 @@ bekræftMail1.addEventListener('click', () => {
 
 
 // === VURDERING FOR MAIL 2  ===
+const vurderingMail2Sikker = document.querySelector('.mail-layover[data-mail="2"] .vurder-sikker');
+const vurderingMail2Usikker = document.querySelector('.mail-layover[data-mail="2"] .vurder-usikker');
+const feedbackRigtig2 = document.querySelector('#feedback-rigtig-mail2');
+const feedbackForkert2 = document.querySelector('#feedback-forkert-mail2');
+
+[vurderingMail2Sikker, vurderingMail2Usikker].forEach(knap => {
+  knap.addEventListener('click', () => {
+    const layover = knap.closest('.mail-layover');
+    const preview = document.querySelector('.mail-preview[data-mail="2"]');
+    const cirkel = preview.querySelector('.mail-cirkel');
+    const vurderingsboks = layover.querySelector('.vurderingsboks');
+    if (vurderingsboks) vurderingsboks.classList.add('skjul');
+
+    const erKorrekt = knap.classList.contains('vurder-sikker');
+    const point = erKorrekt ? 1 : 0;
+
+    // Gem vurdering + point
+    preview.dataset.point = point;
+    preview.dataset.vurdering = knap.textContent.includes("sikker") ? "Sikker" : "Usikker";
+
+    // Vis point
+    cirkel.textContent = point;
+    cirkel.classList.add("vurderet");
+
+    // Vis feedback
+    const feedback = erKorrekt ? feedbackRigtig2 : feedbackForkert2;
+    feedback.classList.remove('skjul');
+    const pointVisning = feedback.querySelector('.point-visning');
+    if (pointVisning) {
+      pointVisning.innerHTML = `Du har fået <strong>${point} point</strong> for denne mail.`;
+    }
+  });
+});
 
 
 // === VURDERING FOR MAIL 4 (USIKKER MAIL) ===
