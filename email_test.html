@@ -189,10 +189,10 @@
                 </div>
                 
               </div>
-              <!-- Lægehuset Mailvisning-->
+              <!-- Tandægehuset Mailvisning-->
               <div class="mail-layover skjul" data-mail="2">
                 <button class="luk-mail">&times;</button>
-                <h3>Bekræftelse på din tid hos Lægehuset</h3>
+                <h3>Bekræftelse på din tid hos Tandlægehuset</h3>
                 <p><strong>Fra:</strong> noreply@Tandlaegehuset.dk</p><br>
                 <p>Kære Mette Jensen,</p><br>
                 <p>
@@ -237,7 +237,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Falsk konkurrence – data-mail="4" -->
+              <!-- QuickBonus Mailvisning-->
               <div class="mail-layover skjul" data-mail="4">
                 <button class="luk-mail">&times;</button>
                 <h3>Tillykke! Du har vundet en iPhone</h3>
@@ -319,6 +319,92 @@
                     <li>Uventet gevinst</li>
                     <li>Kræver betaling for præmie</li>
                     <li>Tidspres / trussel</li>
+                  </ul>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Boguniverset Mailvisning -->
+              <div class="mail-layover skjul" data-mail="5">
+                <button class="luk-mail">&times;</button>
+                <h3>Tak for din bestilling – Ordrebekræftelse #843921</h3>
+                <p><strong>Fra:</strong> noreply@boguniverset.dk</p><br>
+                <p>Kære kunde,</p>
+                <p>
+                  Tak for din bestilling hos Boguniverset. Du har købt:
+                  <ul>
+                    <li>“Den Lille Havfrue – Illustreret udgave”</li>
+                    <li>“Digitalt selvforsvar”</li>
+                  </ul>
+                </p>
+                <p>
+                  Din ordre er bekræftet og bliver sendt inden for 1-3 hverdage.
+                  Du kan følge ordren her:<br>
+                  <a href="#">www.boguniverset.dk/min-ordre/843921</a>
+                </p><br>
+                <p>Med venlig hilsen,<br>Boguniverset Kundeservice</p>
+
+                <!-- vurdering -->
+                <div class="vurderingsboks">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst">Hvad er din umiddelbare vurdering af den mail, du har åbnet?</p>
+                  <div class="mail-knapper">
+                    <button class="knap primær-knap vurder-sikker">Det er en sikker mail</button>
+                    <button class="knap sekundær-knap vurder-usikker">Det er en usikker mail</button>
+                  </div>
+                </div>
+
+                <!-- Feedback forkert -->
+                <div class="feedbackboks skjul" id="feedback-forkert-mail5">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Ikke helt...</strong> Denne mail virker faktisk troværdig og ser ud til at komme fra en rigtig butik.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+
+                <!-- Feedback rigtig -->
+                <div class="feedbackboks skjul" id="feedback-rigtig-mail5">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Korrekt!</strong> Mailen er sandsynligvis ægte – hvad tyder på det?</p>
+                  
+                  <form id="faresignal-form-mail5">
+                    <ul class="faresignaler-interaktiv">
+                      <li><label><input type="checkbox" name="signal" value="afsender"> Afsenderens e-mail virker officiel</label></li>
+                      <li><label><input type="checkbox" name="signal" value="egenbestilling"> Mailen refererer til en konkret bestilling jeg selv har foretaget</label></li>
+                      <li><label><input type="checkbox" name="signal" value="ingenvedh"> Der er ingen vedhæftede filer</label></li>
+                      <li><label><input type="checkbox" name="signal" value="kendturl"> Linket går til en kendt og forventet URL</label></li>
+                      <li><label><input type="checkbox" name="signal" value="neutralton"> Mailen indeholder ikke pres, trusler eller belønning</label></li>
+                    </ul>
+                    <div class="send-feedback-knap-wrapper">
+                      <button type="button" class="knap send-feedback-knap" id="send-feedback-knap-mail5">Bekræft</button>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- korrekt vurdering + korrekt signaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-rigtigt-mail5">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Flot!</strong> Du vurderede korrekt at mailen var sikker og spottede alle relevante tegn.</p>
+                  <p class="point-visning"></p>
+                  <div class="naeste-mail-knap-wrapper">
+                    <button class="knap naeste-mail-knap">Næste mail</button>
+                  </div>
+                </div>
+
+                <!-- korrekt vurdering + ikke alle signaler -->
+                <div class="feedbackboks skjul" id="feedback-rigtigt-forkert-mail5">
+                  <div class="indbakke-topbjaelke"></div>
+                  <p class="vurderingsboks-tekst"><strong>Næsten!</strong> Du havde ret i at mailen er sikker – men der var flere ting, der gjorde den troværdig.</p>
+                  <ul class="faresignaler">
+                    <li>Afsenderens e-mail virker officiel</li>
+                    <li>Mailen refererer til en konkret bestilling jeg selv har foretaget</li>
+                    <li>Der er ingen vedhæftede filer</li>
+                    <li>Linket går til en kendt og forventet URL</li>
+                    <li>Mailen indeholder ikke pres, trusler eller belønning</li>
                   </ul>
                   <p class="point-visning"></p>
                   <div class="naeste-mail-knap-wrapper">
