@@ -285,12 +285,16 @@ const vurderKnapUsikker5 = document.querySelector('.vurder-usikker-mail5');
 vurderKnapSikker5.addEventListener('click', () => {
   vurderingsBoks5.classList.add('skjul');
   const korrekt = harBestilt === true;
+  const preview = document.querySelector('.mail-preview[data-mail="5"]');
+  preview.dataset.vurdering = "Sikker";
   visFeedbackMail5(korrekt);
 });
 
 vurderKnapUsikker5.addEventListener('click', () => {
   vurderingsBoks5.classList.add('skjul');
   const korrekt = harBestilt === false;
+  const preview = document.querySelector('.mail-preview[data-mail="5"]');
+  preview.dataset.vurdering = "Usikker";
   visFeedbackMail5(korrekt);
 });
 
@@ -549,8 +553,10 @@ const feedbackForkertMail9 = document.querySelector('#feedback-forkert-mail99');
     cirkel.textContent = point;
     cirkel.classList.add("vurderet");
     preview.dataset.point = point;
+    preview.dataset.vurdering = knap.classList.contains('vurder-sikker-99') ? "Sikker" : "Usikker";
   });
 });
+
 
 // === SAMLET RESULTAT OG OVERSIGT ===
 const afslutningsKnapper = document.querySelectorAll('.afslutnings-knap');
